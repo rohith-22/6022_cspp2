@@ -38,7 +38,7 @@ public final class Solution {
     public static long power(final int base, final int exponent) {
         /**
         * power recursive is defined here.
-        *@return long
+        *@return int
         */
         if (exponent == 0) {
             return 1;
