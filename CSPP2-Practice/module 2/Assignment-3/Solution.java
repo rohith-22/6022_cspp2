@@ -21,7 +21,7 @@ public final class Solution {
     public static void main(final String[] args) {
         /**
         *input is taken here.
-        *@param base int 
+        *@param base int
         *@param exponent int
         */
         Scanner s = new Scanner(System.in);
@@ -38,7 +38,7 @@ public final class Solution {
     public static long power(final int base, final int exponent) {
         /**
         * power recursive is defined here.
-        *@return
+        *@return long
         */
         if (exponent == 0) {
             return 1;
