@@ -1,6 +1,7 @@
 /**
 * impoting data from java utilities.
-*/import java.util.Scanner;
+*/
+import java.util.Scanner;
 /**
 *Class function.
 */
@@ -32,9 +33,15 @@ public final class Solution {
     /*
     Need to write the power function and print the output.
     */
-    public static long power(final int base,final int exponent) {
-        if (exponent == 0)  return 1;
-        else if (exponent == 1) return base;
-        else return base * power(base, exponent-1);
+    public static long power(final int base, final int exponent) {
+        if (exponent == 0) {
+            return 1;
+        }
+        else if (exponent == 1) {
+            return base;
+        }
+        else {
+            return base * power(base, exponent - 1);
+        }
     }
 }
