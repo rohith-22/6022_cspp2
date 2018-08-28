@@ -6,7 +6,7 @@ import java.util.Scanner;
 *Class function.
 */
 public final class Solution {
-    /*
+    /**
     Do not modify this main function.
     */
     private Solution() {
@@ -30,7 +30,7 @@ public final class Solution {
         long result = power(base, exponent);
         System.out.println(result);
     }
-    /*
+    /**
     Need to write the power function and print the output.
     */
     public static long power(final int base, final int exponent) {
@@ -39,8 +39,7 @@ public final class Solution {
         */
         if (exponent == 0) {
             return 1;
-        }
-        else {
+        }else {
             return base * power(base, exponent - 1);
         }
     }
