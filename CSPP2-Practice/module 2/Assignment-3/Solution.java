@@ -34,11 +34,11 @@ public final class Solution {
     Need to write the power function and print the output.
     *@param base int
     *@param exponent int
+    *@return int
     */
     public static long power(final int base, final int exponent) {
         /**
         * power recursive is defined here.
-        *@return int
         */
         if (exponent == 0) {
             return 1;
