@@ -5,17 +5,17 @@ import java.util.Scanner;
 /**
 *class fine name.
 */
-public class Solution {
+public final class Solution {
     /**
     *Do not modify this main function.
     */
     private Solution() {
     /**
-    *private constructor
+    *private constructor.
     */
     }
     /**
-    *empty constructor
+    *empty constructor.
     *@param args String
     */
     public static void main(final String[] args) {
