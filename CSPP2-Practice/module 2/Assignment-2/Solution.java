@@ -16,7 +16,7 @@ public class Solution {
     }
     /**
     *empty constructor
-    *@param args[]
+    *@param args String
     */
     public static void main(final String[] args) {
         /**
@@ -26,13 +26,15 @@ public class Solution {
         int a = scan.nextInt();
         int b = scan.nextInt();
         int c = scan.nextInt();
-        rootsOfQuadraticEquation(a, b, c);
+        roots(a, b, c);
     }
-    /*
+    /**
     *Need to write the rootsOfQuadraticEquation function and print the output.
+    *@param a int
+    *@param b int
+    *@param c int
     */
-    public static void rootsOfQuadraticEquation(final int a, final int b, final int c)
-    {
+    public static void roots(final int a, final int b, final int c) {
         /**
         *formula for Quadratic fuction
         */
