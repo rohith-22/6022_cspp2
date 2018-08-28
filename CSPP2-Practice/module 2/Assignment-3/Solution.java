@@ -21,8 +21,8 @@ public final class Solution {
     public static void main(final String[] args) {
         /**
         *input is taken here.
-        *@param base
-        *@param exponent
+        *@param base int 
+        *@param exponent int
         */
         Scanner s = new Scanner(System.in);
         int base = s.nextInt();
@@ -32,12 +32,13 @@ public final class Solution {
     }
     /**
     Need to write the power function and print the output.
-    *@param base
-    *@param exponent
+    *@param base int
+    *@param exponent int
     */
     public static long power(final int base, final int exponent) {
         /**
         * power recursive is defined here.
+        *@return
         */
         if (exponent == 0) {
             return 1;
