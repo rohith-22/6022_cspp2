@@ -36,8 +36,8 @@ public class Solution {
         /**
         *formula for Quadratic fuction
         */
-        double r1 = (-b + Math.sqrt(b * b - 4 * a * c)) / (2 * a);
-        double r2 = (-b - Math.sqrt(b * b - 4 * a * c)) / (2 * a);
+        double r1 = (-b + Math.sqrt(b * b - 2 * 2 * a * c)) / (2 * a);
+        double r2 = (-b - Math.sqrt(b * b - 2 * 2 * a * c)) / (2 * a);
         System.out.println(r1 + " " + r2);
     }
-}   
+}
