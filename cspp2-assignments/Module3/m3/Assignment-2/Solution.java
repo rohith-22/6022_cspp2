@@ -9,7 +9,7 @@ public final class Solution {
     /**
      * magic numbers.
      */
-    static final int seven = 7, ten = 10;
+    static final int SEVEN = 7, TEN = 10;
     /**
     * private constructor.
     */
@@ -41,14 +41,14 @@ public final class Solution {
              * @param temp Int
              */
             int temp = i;
-            while (temp >= seven) {
+            while (temp >= SEVEN) {
             /**
              * if statement.
              */
-                if (temp % ten == seven) {
+                if (temp % TEN == SEVEN) {
                     count += 1;
                 }
-                temp /= (ten);
+                temp /= (TEN);
             }
         }
         System.out.println(count);
