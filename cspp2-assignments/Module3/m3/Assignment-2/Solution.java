@@ -2,14 +2,14 @@
  * imported scanner.
  */
 import java.util.Scanner;
-/*
-    Do not modify this main function.
-    */
+/**
+*Do not modify this main function.
+*/
 public class Solution {
 /**
  * private constructor.
  */
-    private Solution(){
+    private Solution() {
         /**
          * empty constructor.
          */
@@ -31,21 +31,22 @@ public class Solution {
          * initial loop.
          * @param i Int
          */
-        for (int i = 1; i <= n; i += 1){
+        for (int i = 1; i <= n; i += 1) {
             /**
              * second loop.
              * @param temp Int
              */
             int temp = i;
-            while (temp != 0) {
+            while (temp >= 7) {
             /**
              * if statement.
              */
-                if (temp % (2 * 5) == 7)    count += 1;
-                // if (i / 10 == 7)    count += 1;
-                temp /= (2 * 5);
+                if (temp % 10 == 7) {
+                    count += 1;
+                }
+                temp /= (10);
             }
         }
-        System.out.println(count); 
+        System.out.println(count);
     }
 }
