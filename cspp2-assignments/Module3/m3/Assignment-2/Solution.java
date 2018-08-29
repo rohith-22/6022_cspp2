@@ -35,16 +35,20 @@ public final class Solution {
             /**
              * second loop.
              * @param temp Int
+             * @param seven Int
+             * @param ten Int
              */
             int temp = i;
-            while (temp >= 7) {
+            int seven = 7;
+            int ten = 10;
+            while (temp >= seven) {
             /**
              * if statement.
              */
-                if (temp % 10 == 7) {
+                if (temp % ten == seven) {
                     count += 1;
                 }
-                temp /= (10);
+                temp /= ten;
             }
         }
         System.out.println(count);
