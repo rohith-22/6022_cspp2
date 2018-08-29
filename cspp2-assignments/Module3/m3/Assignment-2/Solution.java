@@ -6,9 +6,13 @@ import java.util.Scanner;
 *Do not modify this main function.
 */
 public final class Solution {
-/**
- * private constructor.
- */
+    /**
+     * magic numbers.
+     */
+    static final int seven = 7, ten = 10;
+    /**
+    * private constructor.
+    */
     private Solution() {
         /**
          * empty constructor.
@@ -35,12 +39,8 @@ public final class Solution {
             /**
              * second loop.
              * @param temp Int
-             * @param seven Int
-             * @param ten Int
              */
             int temp = i;
-            int seven = 7;
-            int ten = 10;
             while (temp >= seven) {
             /**
              * if statement.
@@ -48,7 +48,7 @@ public final class Solution {
                 if (temp % ten == seven) {
                     count += 1;
                 }
-                temp /= ten;
+                temp /= (ten);
             }
         }
         System.out.println(count);
