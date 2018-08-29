@@ -32,11 +32,10 @@ public final class Solution {
     *Need to write the gcd function and print the output.
     */
     /**
-     * { function_description }
+     * { function_description }.
      *
      * @param      n1    The n 1
      * @param      n2    The n 2
-     * @param      temp  Int
      * @return     { description_of_the_return_value }
      */
     static int gcd(final int n1, final int n2) {
