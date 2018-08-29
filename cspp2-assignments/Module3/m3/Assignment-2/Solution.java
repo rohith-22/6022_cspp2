@@ -5,7 +5,7 @@ import java.util.Scanner;
 /**
 *Do not modify this main function.
 */
-public class Solution {
+public final class Solution {
 /**
  * private constructor.
  */
@@ -19,7 +19,7 @@ public class Solution {
     *
     * @param      args  The arguments
     */
-    public static void main(String[] args) {
+    public static void main(final String[] args) {
         /**
          * input function.
          * @param n Int
