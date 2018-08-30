@@ -1,20 +1,19 @@
 
-import java.util.*;
+import java.util.Scanner;
 public final class Solution {
-    private Solution(){
+    private Solution() {
 
     }
-    static Scanner sc = new Scanner(System.in);
     /* Fill the main function to print resultant of addition of matrices*/
     public static void main(final String[] args) {
         int[][] arr1 = arr();
-        int[][] arr2 = arr(); 
+        int[][] arr2 = arr();
         int row1 = arr1.length;
         int column1 = arr1[0].length;
         int row2 = arr2.length;
         int column2 = arr2[0].length;
         if (row1 == row2 && column1 == column2) {
-            int[][] addarray = add(arr1, arr2 ,row1,column1);
+            int[][] addarray = add(arr1, arr2, row1, column1);
             for (int i = 0; i < row1; i++) {
                 for (int j = 0; j < column1 - 1; j++) {
                 System.out.print(addarray[i][j] + " ");
@@ -27,6 +26,7 @@ public final class Solution {
 
     }
     static int[][] arr() {
+        Scanner sc = new Scanner(System.in);
         int m = sc.nextInt();
         int n = sc.nextInt();
         int[][] arr = new int[m][n];
@@ -43,7 +43,7 @@ public final class Solution {
         // }
         return arr;
     }
-    static int[][] add(final int[][] arr1,final int[][] arr2,
+    static int[][] add(final int[][] arr1, final int[][] arr2,
         final int row, final int column) {
         int[][] arr = new int[row][column];
         for (int i = 0; i < row; i++) {
