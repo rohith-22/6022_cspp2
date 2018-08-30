@@ -1,7 +1,18 @@
-
+/**
+ * import.
+ */
 import java.util.Scanner;
+/**
+ * public.
+ */
 public final class Solution {
+    /**
+     * private.
+     */
     private Solution() {
+        /**
+         * unused.
+         */
 
     }
     /* Fill the main function to print resultant of addition of matrices*/
