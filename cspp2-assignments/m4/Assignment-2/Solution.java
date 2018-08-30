@@ -17,7 +17,8 @@ public final class Solution {
     }
     static Scanner sc = new Scanner(System.in);
     /**
-     *Fill the main function to print resultant of addition of matrices.
+     * main.
+     * @param      args  The arguments
      */
     public static void main(final String[] args) {
         /**
