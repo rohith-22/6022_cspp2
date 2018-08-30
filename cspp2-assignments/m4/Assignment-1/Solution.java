@@ -12,8 +12,9 @@ public class Solution
 		int temp = 0;
 		for (int i = 0; i < n; i++){
 			arr[i] = sc.nextInt();
-			if (temp < arr[i]);
-			temp = arr[i];
+			if (temp < arr[i]){
+				temp = arr[i];
+			}
 		}
 		System.out.println(temp);
 	}
