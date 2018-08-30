@@ -15,6 +15,9 @@ public final class Solution {
          */
 
     }
+    /**
+     * input.
+     */
     static Scanner sc = new Scanner(System.in);
     /**
      * main.
