@@ -37,7 +37,15 @@ public final class Solution {
         }
 
     }
+    /**
+     * { function_description }.
+     *
+     * @return     { description_of_the_return_value }
+     */
     static int[][] arr() {
+        /**
+         * { var_description }.
+         */
         int m = sc.nextInt();
         int n = sc.nextInt();
         int[][] arr = new int[m][n];
@@ -54,8 +62,21 @@ public final class Solution {
         // }
         return arr;
     }
+    /**
+     * { function_description }.
+     *
+     * @param      arr1    The arr 1
+     * @param      arr2    The arr 2
+     * @param      row     The row
+     * @param      column  The column
+     *
+     * @return     { description_of_the_return_value }
+     */
     static int[][] add(final int[][] arr1, final int[][] arr2,
         final int row, final int column) {
+        /**
+         * { var_description }.
+         */
         int[][] arr = new int[row][column];
         for (int i = 0; i < row; i++) {
             for (int j = 0; j < column; j++) {
