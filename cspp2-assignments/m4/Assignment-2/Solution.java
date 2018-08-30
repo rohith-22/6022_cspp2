@@ -15,10 +15,10 @@ public final class Solution {
          */
 
     }
+    static Scanner sc = new Scanner(System.in);
     /**
      *Fill the main function to print resultant of addition of matrices.
      */
-    static Scanner sc = new Scanner(System.in);
     public static void main(final String[] args) {
         /**
          * { var_description }.
