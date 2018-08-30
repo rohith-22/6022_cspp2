@@ -5,6 +5,7 @@ public final class Solution {
 
     }
     /* Fill the main function to print resultant of addition of matrices*/
+    static Scanner sc = new Scanner(System.in);
     public static void main(final String[] args) {
         int[][] arr1 = arr();
         int[][] arr2 = arr();
@@ -19,14 +20,13 @@ public final class Solution {
                 System.out.print(addarray[i][j] + " ");
                 }
             System.out.println(addarray[i][column1 - 1]);
-            }  
+            }
         } else {
             System.out.println("not possible");
         }
 
     }
     static int[][] arr() {
-        Scanner sc = new Scanner(System.in);
         int m = sc.nextInt();
         int n = sc.nextInt();
         int[][] arr = new int[m][n];
