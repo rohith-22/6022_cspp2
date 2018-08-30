@@ -15,9 +15,14 @@ public final class Solution {
          */
 
     }
-    /* Fill the main function to print resultant of addition of matrices*/
+    /**
+     *Fill the main function to print resultant of addition of matrices.
+     */
     static Scanner sc = new Scanner(System.in);
     public static void main(final String[] args) {
+        /**
+         * { var_description }.
+         */
         int[][] arr1 = arr();
         int[][] arr2 = arr();
         int row1 = arr1.length;
