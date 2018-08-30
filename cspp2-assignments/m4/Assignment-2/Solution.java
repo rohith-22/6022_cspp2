@@ -18,7 +18,7 @@ public final class Solution {
     /**
      * input.
      */
-    static Scanner sc = new Scanner(System.in);
+    private static Scanner sc = new Scanner(System.in);
     /**
      * main.
      * @param      args  The arguments
