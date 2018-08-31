@@ -43,5 +43,5 @@ public final class Solution {
             temp = s.charAt(i) + temp;
         }
         return temp;
-    }  
+    }
 }
