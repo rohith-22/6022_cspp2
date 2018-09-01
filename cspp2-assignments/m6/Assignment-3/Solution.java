@@ -2,7 +2,7 @@ import java.util.Scanner;
 import java.util.Arrays;
 /**
  * Write a java program to replace each element
- *  of the given char array that matches the given
+ *  of the given char array that matches the given.
  *  character with the given replacement.
  */
 final class Solution {
