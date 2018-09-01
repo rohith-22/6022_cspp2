@@ -9,6 +9,7 @@ final class Solution {
   /**
    * Constructs the object.
    */
+  public static int HUN = 100;
   private Solution() {
     //not used
   }
@@ -22,7 +23,8 @@ final class Solution {
    *
    * @return     Matrix of the rounded elements
    */
-  static int[][] roundHundred(final int[][] a, final int rows, final int columns) {
+  static int[][] roundHundred(final int[][] a,
+    final int rows, final int columns) {
     /**
      * rounded.
      */
