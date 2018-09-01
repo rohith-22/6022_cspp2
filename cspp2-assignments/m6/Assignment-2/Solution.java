@@ -9,7 +9,7 @@ final class Solution {
   /**
    * Constructs the object.
    */
-  public static int HUN = 100;
+  // public static int Hun = 100;
   private Solution() {
     //not used
   }
