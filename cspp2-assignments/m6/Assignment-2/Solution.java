@@ -9,11 +9,11 @@ final class Solution {
   /**
    * Constructs the object.
    */
-  private static float hun = 100;
+  private static final float hun = 100;
   /**
    * 100.
    */
-  private static int hundered = 100;
+  private static final int hundered = 100;
   /**
    * Constructs the object.
    */
