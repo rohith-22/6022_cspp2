@@ -1,5 +1,5 @@
 /**
- * import.
+ * import Scanner.
  */
 import java.util.Scanner;
 /**
