@@ -9,8 +9,14 @@ final class Solution {
   /**
    * Constructs the object.
    */
-  private static float Hun = 100;
-  private static int Hundered = 100;
+  private static float HUN = 100;
+  /**
+   * 100.
+   */
+  private static int HUNDERED = 100;
+  /**
+   * Constructs the object.
+   */
   private Solution() {
     //not used
   }
@@ -31,8 +37,8 @@ final class Solution {
      */
     for (int i = 0; i < rows; i++) {
       for (int j = 0; j < columns; j++) {
-        int b = Math.round(a[i][j] / Hun);
-        a[i][j] = b * Hundered;
+        int b = Math.round(a[i][j] / HUN);
+        a[i][j] = b * HUNDERED;
       }
     } return a;
   }
