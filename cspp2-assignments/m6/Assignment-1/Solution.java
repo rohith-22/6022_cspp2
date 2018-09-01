@@ -25,16 +25,22 @@ public final class Solution {
 		/**
 		 * code.
 		 */
-		for ( int i = 8; i < n; i++) {
+		for ( int i = 0; i < n; i++) {
+			int count = 0;
 			if (i % 2 != 0) {
-				if (i % 3 == 0 || i %5 == 0 || i % 7 == 0 ) {
-				System.out.println(i);
-
+				for(int j = 1; j <= i; j++) {
+					if (i % j == 0) {
+						count += 1;
+					}
+				}
+				
 			}
-			
+			if (count > 2){
+				System.out.println(i);
 			}
 		}
 	}
+
 	/**
 	* main method as driver program.
 	* @param args is the parameter for this method
