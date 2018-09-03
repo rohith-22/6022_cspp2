@@ -7,6 +7,7 @@ import java.util.Scanner;
  * constructor for InputValidator.
  */
 class InputValidator {
+  private static final int SIX = 6;
   /**
    * constructor class.
    */
@@ -16,7 +17,7 @@ class InputValidator {
    *
    * @param      input  The input from main
    */
-  public InputValidator(String input) {
+  public InputValidator(final String input) {
     /**
      * this is key word for object creation here.
      */
@@ -25,14 +26,14 @@ class InputValidator {
   /**
    * this returns a boolean value.
    * it returns either true or false.
-   * @return   true or false  
+   * @return   true or false.
    */
-  public static boolean validateData() {
+  public boolean validateData() {
     /**
      * length is calculated here.
      */
     int length = input.length();
-    if (length == 6) {
+    if (length >= SIX) {
       return true;
     } else {
       return false;
@@ -42,11 +43,11 @@ class InputValidator {
 /**
  * Main Class for solution.
  */
-public class Solution {
+public final class Solution {
   /**
    * main function is written here and prints out the output.
    */
-  public static void main(String args[]) {
+  public static void main(final String args[]) {
     /**
      * main function is written here and prints out the output.
      */
@@ -54,7 +55,5 @@ public class Solution {
     String input = s.next();
     InputValidator i = new InputValidator(input);
     System.out.println(i.validateData());
-
   }
-
 }
