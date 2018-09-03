@@ -18,7 +18,7 @@ class InputValidator {
   /**
    * Constructs the object here.
    *
-   * @param      input  The input from main
+   * @param      inputt  The input from main
    */
   public InputValidator(final String inputt) {
     /**
@@ -36,11 +36,7 @@ class InputValidator {
      * length is calculated here.
      */
     int length = input.length();
-    if (length >= SIX) {
-      return true;
-    } else {
-      return false;
-    }
+    return length >= SIX;
   }
 }
 /**
@@ -48,10 +44,18 @@ class InputValidator {
  */
 public final class Solution {
   /**
+   * private constructor.
+   */
+  private Solution() {
+    /**
+     * unused constructor.
+     */
+  }
+  /**
    * main function is written here and prints out the output.
    * @param args string
    */
-  public static void main(final String args[]) {
+  public static void main(final String[] args) {
     /**
      * main function is written here and prints out the output.
      */
