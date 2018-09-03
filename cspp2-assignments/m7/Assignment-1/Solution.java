@@ -20,7 +20,7 @@ class InputValidator {
    *
    * @param      inputt  The input from main
    */
-  public InputValidator(final String inputt) {
+  InputValidator(final String inputt) {
     /**
      * this is key word for object creation here.
      */
