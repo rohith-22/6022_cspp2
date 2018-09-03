@@ -7,21 +7,24 @@ import java.util.Scanner;
  * constructor for InputValidator.
  */
 class InputValidator {
-  private static final int SIX = 6;
   /**
    * constructor class.
    */
-  static String input;
+  private static final int SIX = 6;
+  /**
+   * private string input declared here.
+   */
+  private String input;
   /**
    * Constructs the object here.
    *
    * @param      input  The input from main
    */
-  public InputValidator(final String input) {
+  public InputValidator(final String inputt) {
     /**
      * this is key word for object creation here.
      */
-    this.input = input;
+    this.input = inputt;
   }
   /**
    * this returns a boolean value.
@@ -46,6 +49,7 @@ class InputValidator {
 public final class Solution {
   /**
    * main function is written here and prints out the output.
+   * @param args string
    */
   public static void main(final String args[]) {
     /**
