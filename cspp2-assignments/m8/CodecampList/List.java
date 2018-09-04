@@ -95,7 +95,7 @@ public class List {
      * adding items to array.
      * @param      item  The item
      */
-    public void add(int item) {
+    public void add(final int item) {
         //Inserts the specified element at the end of the list.
         // if (size <= arrayList.length) {
         arrayList[size++] = item;
@@ -144,7 +144,7 @@ public class List {
      *
      * @param      index  The index.
      */
-    public void remove(int index) {
+    public void remove(final int index) {
         // write the logic for remove here.
         // Think about what to do to the size variable.
         if (index > 0 && index < size) {
@@ -152,7 +152,9 @@ public class List {
                 arrayList[i] = arrayList[i + 1];
             }
             arrayList[size--] = 0;
-        } else System.out.println("Invalid Position Exception");
+        } else {
+            System.out.println("Invalid Position Exception");
+        }
     }
 
     /*
@@ -173,7 +175,7 @@ public class List {
      *
      * @return     returning the value at the given index position.
      */
-    public int get(int index) {
+    public int get(final int index) {
         // Replace the code below to write the code for get
         for (int element : arrayList) {
             if (element == arrayList[index]) {
@@ -214,7 +216,7 @@ public class List {
             tempStr += arrayList[i] + ",";
         }
         tempStr += arrayList[size - 1] + "]";
-        return tempStr ;
+        return tempStr;
     }
 
     /*
@@ -230,7 +232,7 @@ public class List {
      *
      * @return     { description_of_the_return_value }
      */
-    public boolean contains(int item) {
+    public boolean contains(final int item) {
         // Replace the code below
 
         return indexOf(item) >= 0;
@@ -248,7 +250,7 @@ public class List {
      *
      * @return     { description_of_the_return_value }
      */
-    public int indexOf(int item) {
+    public int indexOf(final int item) {
         // Replace the code below
         for (int i = 0; i < size; i++) {
             if (arrayList[i] == item) {
@@ -262,7 +264,7 @@ public class List {
      *
      * @param      args  The arguments
      */
-    public static void main(String[] args) {
+    public static void main(final String[] args) {
         // create an object of the list to invoke methods on it
         List l = new List();
         // code to read the test cases input file
