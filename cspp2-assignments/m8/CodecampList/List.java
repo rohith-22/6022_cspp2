@@ -82,8 +82,8 @@ public class List {
         // What should be the default values?
         // In the case of the list, it should be empty but
         // it should be initialized with an array size like 10
-        final int TEN = 10;
-        arrayList = new int[TEN];
+        final int ten = 10;
+        arrayList = new int[ten];
         size = 0;
         // Think about the initial value for size.
         // How many items do we have in the list when you create it?
