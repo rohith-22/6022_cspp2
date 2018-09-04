@@ -148,11 +148,9 @@ public class List {
      */
     public int get(int index) {
         // Replace the code below to write the code for get
-        if (index >= 0 && index < size) {
-            for (int element : arrayList) {
-                if (element == arrayList[index]) {
-                    return element;
-                }
+        for (int element : arrayList) {
+            if (element == arrayList[index]) {
+                return element;
             }
         } return -1;
     }
@@ -250,7 +248,9 @@ public class List {
                 System.out.println(l.indexOf(Integer.parseInt(tokens[1])));
                 break;
             case "get":
-                System.out.println(l.get(Integer.parseInt(tokens[1])));
+                if (Integer.parseInt(tokens[1]) <= l.size()) {
+                    System.out.println(l.get(Integer.parseInt(tokens[1])));
+                }
                 break;
             case "contains":
                 System.out.println(l.contains(Integer.parseInt(tokens[1])));
