@@ -1,9 +1,10 @@
 import java.io.BufferedInputStream;
 import java.util.Scanner;
-import java.util.Arrays;
-
+/**
+ * class for implementing and declaring List variables.
+ */
 public class List {
-    //Implement all the methods mentioned to build a ListADT
+    //*Implement all the methods mentioned to build a ListADT
 
     /*
      * The goal for the list is to store items.
@@ -59,6 +60,10 @@ public class List {
      * The purpose of the constructor is to initialize the
      * class variables with some default values.
      */
+    /**
+     * Constructs the list object.
+     * initializing array and size.
+     */
     public List() {
 
         // what are the two variables to be initialized here?
@@ -86,6 +91,10 @@ public class List {
      *
      * The method returns void (nothing)
      */
+    /**
+     * adding items to array.
+     * @param      item  The item
+     */
     public void add(int item) {
         //Inserts the specified element at the end of the list.
         // if (size <= arrayList.length) {
@@ -99,6 +108,11 @@ public class List {
      * to the objects outside the list
      *
      * The method returns an int. Empty list should return 0.
+     */
+    /**
+     * returning the size of the array after performing operations.
+     *
+     * @return     returns size.
      */
     public int size() {
         // replace the code below to implement the size method
@@ -124,6 +138,12 @@ public class List {
      * array = [1,3,0,0,0,0,0,0,0,0]
      * The method returns void (nothing)
      */
+    /**
+     * performing remove operation.
+     * removing the item from the given index.
+     *
+     * @param      index  The index.
+     */
     public void remove(int index) {
         // write the logic for remove here.
         // Think about what to do to the size variable.
@@ -145,6 +165,13 @@ public class List {
      * in the list then that would mean the item doesn't exist.
      * How do we check if the position is greater than the
      * number of items in the list? Would size variable be useful?
+     */
+    /**
+     * item value is found from the index value.
+     *
+     * @param      index  The index
+     *
+     * @return     returning the value at the given index position.
      */
     public int get(int index) {
         // Replace the code below to write the code for get
@@ -175,6 +202,11 @@ public class List {
      * not all the elements of the array.
      *
      */
+    /**
+     * Returns a string representation of the array.
+     *
+     * @return     String representation of the object.
+     */
     public String toString() {
         // Replace the code below
         String tempStr = "[";
@@ -191,6 +223,13 @@ public class List {
      * So, iterate through the list and return true if
      * the item exists and otherwise false
      */
+    /**
+     * returns a boolean value by checking given value is in list or not.
+     *
+     * @param      item  The item
+     *
+     * @return     { description_of_the_return_value }
+     */
     public boolean contains(int item) {
         // Replace the code below
 
@@ -202,6 +241,13 @@ public class List {
      * of the specified element in this list,
      * or -1 if this list does not contain the element.
      */
+    /**
+     * Searches for the first match.
+     *returns th eindex value of the match.
+     * @param      item  The item
+     *
+     * @return     { description_of_the_return_value }
+     */
     public int indexOf(int item) {
         // Replace the code below
         for (int i = 0; i < size; i++) {
@@ -211,11 +257,14 @@ public class List {
         }
         return -1;
     }
-
+    /**
+     * main function performs all the given statements.
+     *
+     * @param      args  The arguments
+     */
     public static void main(String[] args) {
         // create an object of the list to invoke methods on it
         List l = new List();
-
         // code to read the test cases input file
         Scanner stdin = new Scanner(new BufferedInputStream(System.in));
         // check if there is one more line to process
