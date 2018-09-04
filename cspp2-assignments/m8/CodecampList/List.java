@@ -30,7 +30,6 @@ public class List {
     /**
      * private ten.
      */
-    final int Ten = 10;
     // declare a private int[]
     // don't create the array yet using new
     // that's the job of the List constructor
@@ -83,6 +82,7 @@ public class List {
         // What should be the default values?
         // In the case of the list, it should be empty but
         // it should be initialized with an array size like 10
+        final int Ten = 10;
         arrayList = new int[Ten];
         size = 0;
         // Think about the initial value for size.
