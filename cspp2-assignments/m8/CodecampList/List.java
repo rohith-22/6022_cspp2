@@ -30,7 +30,7 @@ public class List {
     /**
      * private ten.
      */
-    private static int TEN = 10;
+    final int TEN = 10;
     // declare a private int[]
     // don't create the array yet using new
     // that's the job of the List constructor
@@ -318,6 +318,7 @@ public class List {
             case "contains":
                 System.out.println(l.contains(Integer.parseInt(tokens[1])));
                 break;
+            default :
             }
         }
     }
