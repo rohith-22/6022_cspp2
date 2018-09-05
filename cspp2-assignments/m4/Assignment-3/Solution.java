@@ -10,20 +10,21 @@ import java.util.Scanner;
  */
 public final class Solution {
     /**
-    Do not modify this main function.
+    * private solution constructor.
     */
-    private Solution() {
+   private Solution() {
         /**
          * unused.
          */
     }
     /**
-     * main.
+     * main function. 
      * @param      args  The arguments
      */
     public static void main(final String[] args) {
         /**
          * input Scanner.
+         * and calls binary to decimal fun is called.
          */
         Scanner sc = new Scanner(System.in);
         int n = sc.nextInt();
@@ -35,13 +36,13 @@ public final class Solution {
         }
     }
     /**
-     * { function_description }.
-     * @param      s     { parameter_description }
-     * @return     { description_of_the_return_value }
+     * { function to convert binary to decimal }.
+     * @param      s     { string class }
+     * @return     { returns a decimal value }
      */
     static String binaryToDecimal(final String s) {
         /**
-         * { var_description }.
+         * temp is a temporary integer to store decimal value.
          */
         int temp = 0;
         int k = s.length();
@@ -58,16 +59,16 @@ public final class Solution {
         return b;
     }
     /**
-     * { function_description }.
+     * { this functio n is used to find  power of integer. }.
      *
-     * @param      base   The base
-     * @param      power  The power
-     *
-     * @return     { description_of_the_return_value }
+     * @param      base   The base. int
+     * @param      power  The power, int
+     *reccursive method.
+     * @return     { returns the power of given integer. }
      */
     static int pow(final int base, final int power) {
         /**
-         * { item_description }.
+         * { reccursive to find power. }.
          */
         if (power == 0) {
             return 1;
