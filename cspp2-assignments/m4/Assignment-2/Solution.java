@@ -1,13 +1,13 @@
 /**
- * import.
+ * import scanner.
  */
 import java.util.Scanner;
 /**
- * public.
+ * class for solution.
  */
 public final class Solution {
     /**
-     * private.
+     * private constructor.
      */
     private Solution() {
         /**
@@ -16,16 +16,16 @@ public final class Solution {
 
     }
     /**
-     * input.
+     * input from scanner.
      */
     private static Scanner sc = new Scanner(System.in);
     /**
-     * main.
+     * main function.
      * @param      args  The arguments
      */
     public static void main(final String[] args) {
         /**
-         * { var_description }.
+         *input is taken here and sum of arrays is printed here.
          */
         int[][] arr1 = arr();
         int[][] arr2 = arr();
@@ -47,19 +47,19 @@ public final class Solution {
 
     }
     /**
-     * { function_description }.
+     * { function to build a array from inputs }.
      *
-     * @return     { description_of_the_return_value }
+     * @return     { returns a array. }
      */
     static int[][] arr() {
         /**
          * { var_description }.
          */
-        int m = sc.nextInt();
-        int n = sc.nextInt();
-        int[][] arr = new int[m][n];
-        for (int i = 0; i < m; i++) {
-            for (int j = 0; j < n; j++) {
+        int rowSize = sc.nextInt();
+        int columnSize = sc.nextInt();
+        int[][] arr = new int[rowSize][columnSize];
+        for (int i = 0; i < rowSize; i++) {
+            for (int j = 0; j < columnSize; j++) {
                 arr[i][j] = sc.nextInt();
             }
         }
@@ -72,19 +72,19 @@ public final class Solution {
         return arr;
     }
     /**
-     * { function_description }.
+     * { function to add two arrays and print the added array }.
      *
      * @param      arr1    The arr 1
      * @param      arr2    The arr 2
      * @param      row     The row
      * @param      column  The column
      *
-     * @return     { description_of_the_return_value }
+     * @return     { returns sum of arrays. }
      */
     static int[][] add(final int[][] arr1, final int[][] arr2,
         final int row, final int column) {
         /**
-         * { var_description }.
+         * { sum of arrays is done in this function }.
          */
         int[][] arr = new int[row][column];
         for (int i = 0; i < row; i++) {
