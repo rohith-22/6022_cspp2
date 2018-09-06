@@ -187,7 +187,7 @@ public final class List {
   /**
    * returns the size of the array.
    *
-   * @return     { description_of_the_return_value }
+   * @return     returns size.
   */
   public int size() {
     return size;
@@ -303,7 +303,7 @@ public final class List {
    *
    * @param      item  The item
    *
-   * @return     { description_of_the_return_value }
+   * @return     returns true or false.
    */
   public boolean contains(final int item) {
     return indexOf(item) == -1;
