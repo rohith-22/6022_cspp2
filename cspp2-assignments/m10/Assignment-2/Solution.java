@@ -9,7 +9,15 @@ import java.util.Scanner;
 /**
  * Class for solution.
  */
-class Solution {
+public final class Solution {
+  /**
+   * private constructor.
+   */
+  private Solution() {
+    /**
+     * unused.
+     */
+  }
 /**
  * main function.
  *
