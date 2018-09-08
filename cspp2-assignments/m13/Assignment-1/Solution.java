@@ -20,16 +20,17 @@ class Set {
   /**
    * Constructs the object.
    */
-  public Set() {
+  Set() {
     final int ten = 10;
     set = new int[ten];
     size = 0;
   }
   /**
-   * overloaded constructor.
-   * @param sizeOfSet
+   * Constructs the object.
+   *
+   * @param      sizeOfSet  The size of set
    */
-  public Set(final int sizeOfSet) {
+  Set(final int sizeOfSet) {
     set = new int[sizeOfSet];
     size = 0;
   }
@@ -156,10 +157,10 @@ class Set {
    */
   public int[][] cartesianProduct(final Set items) {
     int[][] temp = new int[size * items.size()][2];
-    for (int i = 0; i < items.size(); i++) {
-      for (int j = 0; j < 2; j++) {
-        temp[i][0] = set[i];
-        temp[1][j] = items.set[j];
+    for (int i = 0; i < size; i++) {
+      for (int j = 0; j < items.size(); j++) {
+        temp[j][i] = set[i];
+        temp[j][1] = items.set[j];
       }
     }
     return temp;
