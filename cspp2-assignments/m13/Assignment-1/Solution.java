@@ -27,13 +27,14 @@ class Set {
   }
   /**
    * overloaded constructor.
+   * @param sizeOfSet
    */
-  public Set(int sizeOFSet) {
-    set = new int[sizeOFSet];
+  public Set(int sizeOfSet) {
+    set = new int[sizeOfSet];
     size = 0;
   }
   /**
-   * size of the set
+   * size of the set.
    *
    * @return     returns size.
    */
