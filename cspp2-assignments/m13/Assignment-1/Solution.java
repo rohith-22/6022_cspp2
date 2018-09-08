@@ -21,8 +21,8 @@ class Set {
    * Constructs the object.
    */
   public Set() {
-    final int TEN = 10;
-    set = new int[TEN];
+    final int ten = 10;
+    set = new int[ten];
     size = 0;
   }
   /**
@@ -66,7 +66,7 @@ class Set {
     if (size == 0) {
       return "{}";
     }
-    for (int i = 0; i < size - 1 ; i++) {
+    for (int i = 0; i < size - 1; i++) {
       tempString += set[i] + ", ";
     }
     tempString += set[size - 1] + "}";
@@ -102,7 +102,7 @@ class Set {
     if (size + items.length > set.length) {
       set = reSize();
     }
-    for (int i = size; i < items.length ; i++) {
+    for (int i = size; i < items.length; i++) {
       if (!contains(items[i])) {
         set[size++] = items[i];
       }
@@ -134,7 +134,7 @@ class Set {
    *
    * @return     returns a set
    */
-  public Set retainAll(final int[] items ) {
+  public Set retainAll(final int[] items) {
     Set temp = new Set(items.length);
     for (int i = 0; i < size; i++) {
       for (int j = 0; j < items.length; j++) {
@@ -154,8 +154,8 @@ class Set {
    * @return     returns a set.
    */
   public int[][] cartesianProduct(final Set items) {
-    int [][] temp = new int[size * items.size()][2];
-    for (int i = 0; i < items.size(); i ++) {
+    int[][] temp = new int[size * items.size()][2];
+    for (int i = 0; i < items.size(); i++) {
       for (int j = 0; j < 2; j++) {
         temp[i][0] = set[i];
         temp[1][j] = items.set[j];
