@@ -156,6 +156,9 @@ class Set {
    * @return     returns a set.
    */
   public int[][] cartesianProduct(final Set items) {
+    if (size == 0 || items.size() == 0) {
+      return null;
+    }
     int[][] temp = new int[size * items.size()][2];
     int k = 0;
     for (int i = 0; i < size; i++) {
