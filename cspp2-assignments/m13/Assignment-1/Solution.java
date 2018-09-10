@@ -160,8 +160,8 @@ class Set {
     int k = 0;
     for (int i = 0; i < size; i++) {
       for (int j = 0; j < items.size(); j++) {
-        temp[k][i] = set[i];
-        temp[k++][j] = items.set[j];
+        temp[k][0] = set[i];
+        temp[k++][1] = items.set[j];
       }
     }
     return temp;
