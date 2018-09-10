@@ -157,10 +157,11 @@ class Set {
    */
   public int[][] cartesianProduct(final Set items) {
     int[][] temp = new int[size * items.size()][2];
+    int k = 0;
     for (int i = 0; i < size; i++) {
       for (int j = 0; j < items.size(); j++) {
-        temp[i][j] = set[i];
-        temp[1][j] = items.set[j];
+        temp[k][i] = set[i];
+        temp[k++][j] = items.set[j];
       }
     }
     return temp;
