@@ -159,7 +159,7 @@ class List {
   }
   /**
   *Removes all of its elements that are contained in the specified int array.
-   @param      newArray  The new array
+  *@param      newArray  The new array
   * @param      newArray   The new array
   *
   * @throws     Exception  throws a exception.
@@ -185,7 +185,7 @@ class List {
    *
    * @return     returns a sub list from a list.
    *
-   * @throws     Exception  
+   * @throws     Exception
    */
   public List subList(final int start, final int end) throws Exception {
     List subList = new List();
@@ -266,11 +266,14 @@ class List {
   }
 }
 /**
- * main function.
- *
- * @param      args  The arguments
+ * main Solution which contains main function.
  */
 public class Solution {
+  /**
+   * main function to call all the functions in class List.
+   *
+   * @param      args  The arguments
+   */
   public static void main(final String[] args) {
     // create an object of the list to invoke methods on it
     List l = new List();
