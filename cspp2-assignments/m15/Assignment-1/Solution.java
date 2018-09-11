@@ -1,7 +1,9 @@
 import java.io.BufferedInputStream;
 import java.util.Scanner;
 import java.util.Arrays;
-
+/**
+ * this is a class to create a List of elements.
+ */
 class List {
   /**
    * final int number.
@@ -20,7 +22,7 @@ class List {
    * The purpose of the constructor is to initialize the class variables with.
    * some default values.
    */
-  public List() {
+  List() {
 
     list = new int[num];
     size  = 0;
@@ -158,6 +160,9 @@ class List {
   /**
   *Removes all of its elements that are contained in the specified int array.
    @param      newArray  The new array
+  * @param      newArray   The new array
+  *
+  * @throws     Exception  throws a exception.
   */
   public void removeAll(final int[] newArray) throws Exception {
     for (int i = 0; i < newArray.length; i++) {
@@ -175,12 +180,13 @@ class List {
   second parameter indicates the endIndex. Returns null and print
   "Index Out of Bounds Exception" if any of values start and end are negative
   and also if start is greater than end.
-
-  @param      start  The start
-  @param      end    The end
-
-  @return     returnd s dublidt from s given list
-  */
+   * @param      start      The start
+   * @param      end        The end
+   *
+   * @return     returns a sub list from a list.
+   *
+   * @throws     Exception  
+   */
   public List subList(final int start, final int end) throws Exception {
     List subList = new List();
     if (start < 0 || end <= 0 || start > end
