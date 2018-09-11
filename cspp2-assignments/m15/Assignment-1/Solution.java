@@ -269,6 +269,14 @@ class List {
  */
 public class Solution {
   /**
+   * Constructs the object.
+   */
+  private Solution() {
+    /**
+     * unused constructor.
+     */
+  }
+  /**
    * main function to call all the functions in class List.
    *
    * @param      args  The arguments
