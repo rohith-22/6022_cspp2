@@ -107,8 +107,8 @@ class SortedSet {
 		}
 	}
 	/**
-	 * this function is to check weather the given function is in the set or not.
-	 *
+	 * this function is to check weather
+	 * the given function is in the set or not.
 	 * @param      item  The item
 	 *
 	 * @return     returns true if the element is in set.
@@ -206,7 +206,7 @@ class SortedSet {
 	 *
 	 * @param      toElement  To element.
 	 *
-	 * @return     returns all the elements less than the given number in the set.
+	 * @return   returns all the elements less than the given number in the set.
 	 *
 	 * @throws     Exception  throws exception .
 	 */
