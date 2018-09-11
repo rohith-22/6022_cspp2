@@ -159,7 +159,6 @@ class List {
   }
   /**
   *Removes all of its elements that are contained in the specified int array.
-  *@param      newArray  The new array
   * @param      newArray   The new array
   *
   * @throws     Exception  throws a exception.
@@ -185,7 +184,7 @@ class List {
    *
    * @return     returns a sub list from a list.
    *
-   * @throws     Exception
+   * @throws     Exception exception.
    */
   public List subList(final int start, final int end) throws Exception {
     List subList = new List();
