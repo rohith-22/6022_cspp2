@@ -267,7 +267,7 @@ class List {
 /**
  * main Solution which contains main function.
  */
-public class Solution {
+public final class Solution {
   /**
    * Constructs the object.
    */
