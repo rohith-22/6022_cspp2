@@ -220,7 +220,7 @@ class BookYourShow {
 /**
  * Class for solution.
  */
-public class Solution {
+public final class Solution {
   /**
    * constructor.
    */
