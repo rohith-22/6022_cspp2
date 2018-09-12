@@ -1,4 +1,3 @@
-import java.io.BufferedInputStream;
 import java.util.Scanner;
 import java.util.Arrays;
 /**
@@ -123,6 +122,9 @@ class BookYourShow {
    * object variable.
    */
   private List<String> bookedTickets;
+  /**
+   * Constructs the object.
+   */
   BookYourShow() {
     /**
      * list to store Show object.
@@ -142,7 +144,7 @@ class BookYourShow {
     listObject.add(obj);
   }
   /**
-   * Gets a show from the list
+   * Gets a show from the list.
    *
    * @param      movieName  The movie name
    * @param      dateTime   The date time
@@ -152,7 +154,7 @@ class BookYourShow {
   public Show getAShow(final String movieName, final String dateTime) {
     for (int i = 0; i < listObject.size(); i++) {
       if (listObject.get(i).getMovieName().equals(movieName)
-        && listObject.get(i).getDateAndTime().equals(dateTime)) {
+          && listObject.get(i).getDateAndTime().equals(dateTime)) {
         return listObject.get(i);
       }
     }
@@ -175,7 +177,7 @@ class BookYourShow {
           if (seats[j].equals(movieData.getSeatNumbers()[i])) {
             movieData.setSeat(i, "N/A");
             bookedTickets.add(obj.getMobileNumber()
-              + " " + movieName + " " + dateTime);
+                              + " " + movieName + " " + dateTime);
           }
         }
       }
@@ -194,9 +196,9 @@ class BookYourShow {
                            final String mobileNumber) {
     for (int i = 0; i < bookedTickets.size(); i++) {
       if ((mobileNumber + " " + movieName
-        + " " + dateTime).equals(bookedTickets.get(i))) {
+           + " " + dateTime).equals(bookedTickets.get(i))) {
         System.out.println(mobileNumber
-          + " " + movieName + " " + dateTime);
+                           + " " + movieName + " " + dateTime);
         return;
       }
     }
@@ -219,6 +221,12 @@ class BookYourShow {
  * Class for solution.
  */
 public class Solution {
+  /**
+   * constructor.
+   */
+  private Solution() {
+
+  }
   /**
    * main method for class solution.
    *
