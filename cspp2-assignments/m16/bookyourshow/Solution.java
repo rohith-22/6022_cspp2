@@ -5,15 +5,24 @@ import java.util.Arrays;
  * Class for show.
  */
 class Show {
+  /**
+   * name of the movie variable.
+   */
   private String nameOfTheMovie;
+  /**
+   * date and time variable.
+   */
   private String dateAndTime;
+  /**
+   * seat numbers variable.
+   */
   private String[] seatNumbers;
   /**
    * Constructor for the class show.
    *
-   * @param      m  moviename.
-   * @param      dt date and time.
-   * @param      s  seats string.
+   * @param      movieName  moviename.
+   * @param      dateTime date and time.
+   * @param      seats  seats string.
    */
   Show(final String movieName, final String dateTime,
        final String[] seats) {
@@ -107,7 +116,7 @@ class Patron {
 class BookYourShow {
   List<Show> listObject;
   List<String> bookedTickets;
-  public BookYourShow() {
+  BookYourShow() {
     /**
      * list to store Show object.
      */
@@ -135,8 +144,8 @@ class BookYourShow {
    */
   public Show getAShow(final String movieName, final String dateTime) {
     for (int i = 0; i < listObject.size(); i++) {
-      if (listObject.get(i).getMovieName().equals(movieName) &&
-          listObject.get(i).getDateAndTime().equals(dateTime)) {
+      if (listObject.get(i).getMovieName().equals(movieName)
+        && listObject.get(i).getDateAndTime().equals(dateTime)) {
         return listObject.get(i);
       }
     }
@@ -158,8 +167,8 @@ class BookYourShow {
         for (int j = 0; j < seats.length; j++) {
           if (seats[j].equals(movieData.getSeatNumbers()[i])) {
             movieData.setSeat(i, "N/A");
-            bookedTickets.add(obj.getMobileNumber() + " " +
-                              movieName + " " + dateTime);
+            bookedTickets.add(obj.getMobileNumber()
+              + " " + movieName + " " + dateTime);
           }
         }
       }
@@ -177,10 +186,10 @@ class BookYourShow {
   public void printTickets(final String movieName, final String dateTime,
                            final String mobileNumber) {
     for (int i = 0; i < bookedTickets.size(); i++) {
-      if ((mobileNumber + " " + movieName + " " +
-           dateTime).equals(bookedTickets.get(i))) {
-        System.out.println(mobileNumber + " " +
-                           movieName + " " + dateTime);
+      if ((mobileNumber + " " + movieName
+        + " " + dateTime).equals(bookedTickets.get(i))) {
+        System.out.println(mobileNumber
+          + " " + movieName + " " + dateTime);
         return;
       }
     }
