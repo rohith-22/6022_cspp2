@@ -111,11 +111,18 @@ class Patron {
     return this.mobileNumber;
   }
 }
-
-
+/**
+ * Class for book your show.
+ */
 class BookYourShow {
-  List<Show> listObject;
-  List<String> bookedTickets;
+  /**
+   * list object variable.
+   */
+  private List<Show> listObject;
+  /**
+   * object variable.
+   */
+  private List<String> bookedTickets;
   BookYourShow() {
     /**
      * list to store Show object.
