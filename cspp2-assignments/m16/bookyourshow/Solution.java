@@ -1,56 +1,54 @@
+import java.io.BufferedInputStream;
 import java.util.Scanner;
 import java.util.Arrays;
-import java.io.BufferedInputStream;
 /**
  * Class for show.
- * this enables the user to give the movie details.
  */
 class Show {
-
+	private String nameOfTheMovie;
+	private String dateAndTime;
 	private String[] seatNumbers;
-	private String nameOfMovie;
-	private String showDateTime;
 	/**
-	 * Constructor for class show.
+	 * Constructor for the class show.
 	 *
-	 * @param      movie     The movie
-	 * @param      dateTime  The date time
-	 * @param      seats     The seats
+	 * @param      m  moviename.
+	 * @param      dt date and time.
+	 * @param      s  seats string.
 	 */
-	public Show(String movie, String dateTime, String[] seats) {
-		seatNumbers = new String[seats.length];
-		nameOfMovie = movie;
-		showDateTime = dateTime;
+	Show(String m, String dt, String[] s) {
+		this.nameOfTheMovie = m;
+		this.dateAndTime = dt;
+		this.seatNumbers = s;
 	}
 	/**
-	 * getter method which gives the movie name.
+	 * Gets the movie name.
 	 *
-	 * @return    returns  The movie name.
+	 * @return returns the movie name.
 	 */
 	public String getMovieName() {
-		return nameOfMovie;
+		return this.nameOfTheMovie;
 	}
 	/**
-	 * Gets the date time.
+	 * Gets the date and time.
 	 *
-	 * @return    returns  The date time.
+	 * @return returns date and time.
 	 */
-	public String getDateTime() {
-		return showDateTime;
+	public String getDateAndTime() {
+		return this.dateAndTime;
 	}
 	/**
-	 * Gets the seats.
+	 * Gets the seat numbers.
 	 *
-	 * @return    returns The seats.
+	 * @return returns the seat numbers.
 	 */
-	public String[] getSeats() {
-		return seatNumbers;
+	public String[] getSeatNumbers() {
+		return this.seatNumbers;
 	}
 	/**
 	 * Sets the seat.
 	 *
-	 * @param      index  The index
-	 * @param      set    The set variable is used to change the seat name.
+	 * @param index the index variable.
+	 * @param set the set variable to set the name of seat.
 	 */
 	public void setSeat(int index, String set) {
 		seatNumbers[index] = set;
@@ -58,23 +56,22 @@ class Show {
 	/**
 	 * Returns a string representation of the object.
 	 *
-	 * @return     String representation of the object.
+	 * @return returns string representation of the object.
 	 */
 	public String toString() {
-		return nameOfMovie + "," + showDateTime;
+		return this.nameOfTheMovie + "," + this.dateAndTime;
 	}
 }
 /**
- * Class for patron.
- * details of user.
+ * Class for user details.
  */
 class Patron {
 	/**
-	 * variable to store username.
+	 * username variable.
 	 */
-	private String nameOfUser;
+	private String patronName;
 	/**
-	 * variable to store mobilenumber.
+	 * mobile number variable.
 	 */
 	private String mobileNumber;
 	/**
@@ -83,9 +80,9 @@ class Patron {
 	 * @param      name    The name
 	 * @param      number  The number
 	 */
-	Patron(String name, String number) {
-		nameOfUser = name;
-		mobileNumber = number;
+	Patron(String n, String mbnum) {
+		this.patronName = n;
+		this.mobileNumber = mbnum;
 	}
 	/**
 	 * Gets the name.
@@ -93,7 +90,7 @@ class Patron {
 	 * @return     The name.
 	 */
 	public String getName() {
-		return nameOfUser;
+		return this.patronName;
 	}
 	/**
 	 * Gets the mobile number.
@@ -101,19 +98,15 @@ class Patron {
 	 * @return     The mobile number.
 	 */
 	public String getMobileNumber() {
-		return mobileNumber;
+		return this.mobileNumber;
 	}
 }
-/**
- * Class for book your show.
- */
+
+
 class BookYourShow {
-	List <Show> listObject;
+	List<Show> listObject;
 	List<String> bookedTickets;
-	/**
-	 * Constructs the object.
-	 */
-	BookYourShow() {
+	public BookYourShow() {
 		/**
 		 * list to store Show object.
 		 */
@@ -130,7 +123,6 @@ class BookYourShow {
 	 */
 	public void addAShow(Show obj) {
 		listObject.add(obj);
-
 	}
 	/**
 	 * Gets a show from the list
@@ -140,10 +132,10 @@ class BookYourShow {
 	 *
 	 * @return     A show.
 	 */
-	Show getAShow(String movieName, String dateTime) {
+	public Show getAShow(String movieName, String dateAndTime) {
 		for (int i = 0; i < listObject.size(); i++) {
 			if (listObject.get(i).getMovieName().equals(movieName) &&
-			    listObject.get(i).getDateTime().equals(dateTime)) {
+			    listObject.get(i).getDateAndTime().equals(dateAndTime)) {
 				return listObject.get(i);
 			}
 		}
@@ -157,15 +149,16 @@ class BookYourShow {
 	 * @param      obj        The object
 	 * @param      seats      The seats
 	 */
-	public void bookAShow(String movieName, String dateTime, Patron obj, String[] seats) {
-		Show objectShow = getAShow(movieName, dateTime);
-		if (objectShow != null) {
-			for (int i = 0; i < objectShow.getSeats().length; i++) {
+	public void bookAShow(String movieName, String dateAndTime,
+	                      Patron obj, String[] seats) {
+		Show movieData = getAShow(movieName, dateAndTime);
+		if (movieData != null) {
+			for (int i = 0; i < movieData.getSeatNumbers().length; i++) {
 				for (int j = 0; j < seats.length; j++) {
-					if (seats[j].equals(objectShow.getSeats()[i])) {
-						objectShow.setSeat(i, "N/A");
-						bookedTickets.add(obj.getMobileNumber() + " " + movieName + " " + dateTime);
-
+					if (seats[j].equals(movieData.getSeatNumbers()[i])) {
+						movieData.setSeat(i, "N/A");
+						bookedTickets.add(obj.getMobileNumber() + " " +
+						                  movieName + " " + dateAndTime);
 					}
 				}
 			}
@@ -180,10 +173,13 @@ class BookYourShow {
 	 * @param      dateTime      The date time
 	 * @param      mobileNumber  The mobile number
 	 */
-	public void printTicket(String movieName, String dateTime, String mobileNumber) {
+	public void printTickets(String movieName, String dateAndTime,
+	                         String mobileNumber) {
 		for (int i = 0; i < bookedTickets.size(); i++) {
-			if ((mobileNumber + " " + movieName + " " + dateTime).equals(bookedTickets.get(i))) {
-				System.out.println(mobileNumber + " " + movieName + " " + dateTime);
+			if ((mobileNumber + " " + movieName + " " +
+			     dateAndTime).equals(bookedTickets.get(i))) {
+				System.out.println(mobileNumber + " " +
+				                   movieName + " " + dateAndTime);
 				return;
 			}
 		}
@@ -193,29 +189,25 @@ class BookYourShow {
 	/**
 	 * Shows all prints all the movies.
 	 */
-	void showAll() {
+	public void showAll() {
 		for (int i = 0; i < listObject.size(); i++) {
-			System.out.println(listObject.get(i).toString() + "," +
-			                   Arrays.toString(listObject.get(i).getSeats()).replace(" ", ""));
+
+			System.out.println(listObject.get(i).toString()
+			                   + "," + Arrays.toString(listObject.get(i).
+			                       getSeatNumbers()).replace(" ", ""));
 		}
 	}
 }
 /**
  * Class for solution.
  */
-public final class Solution {
+public class Solution {
 	/**
-	 * Constructs the object.
-	 */
-	private Solution() {
-
-	}
-	/**
-	 * main method to drive program.
+	 * main method for class solution.
 	 *
-	 * @param      args  The arguments
+	 * @param args  The arguments.
 	 */
-	public static void main(final String[] args) {
+	public  static void main(final String[] args) {
 		BookYourShow bys = new BookYourShow();
 		Scanner scan = new Scanner(System.in);
 		int testCases = Integer.parseInt(scan.nextLine());
@@ -232,7 +224,6 @@ public final class Solution {
 				}
 				bys.addAShow(new Show(check[1], tokens[1], seats));
 				break;
-
 			case "book":
 				k = 2 + 2;
 				seats = new String[tokens.length - 2 - 2];
@@ -253,7 +244,7 @@ public final class Solution {
 				break;
 
 			case "print":
-				bys.printTicket(check[1], tokens[1], tokens[2]);
+				bys.printTickets(check[1], tokens[1], tokens[2]);
 				break;
 
 			case "showAll":
@@ -266,3 +257,4 @@ public final class Solution {
 		}
 	}
 }
+
