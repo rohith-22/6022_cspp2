@@ -162,7 +162,7 @@ class BookYourShow {
 		if (objectShow != null) {
 			for (int i = 0; i < objectShow.getSeats().length; i++) {
 				for (int j = 0; j < seats.length; j++) {
-					if (objectShow.getSeats()[i].equals(seats[j])) {
+					if (seats[j].equals(objectShow.getSeats()[i])) {
 						objectShow.setSeat(i, "N/A");
 						bookedTickets.add(obj.getMobileNumber() + " " + movieName + " " + dateTime);
 
