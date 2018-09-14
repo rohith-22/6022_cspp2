@@ -111,6 +111,9 @@ class ShoppingCart {
     if (coupon.equals("IND30")) {
       amount -= totalAmount * 30 / 100;
     }
+    else {
+      System.out.println("Invalid coupon");
+    }
   }
   void printInvoice() {
     System.out.println("Name   quantity   Price");
@@ -122,7 +125,7 @@ class ShoppingCart {
       }
     }
     System.out.println("Total:" + totalAmount);
-    System.out.println("Disc%:" + amount);
+    System.out.println("Disc%:" + (totalAmount - amount));
     System.out.println("Tax:" + amount * 0.15);
     System.out.println("Payable amount: " + getPayableAmount());
   }
