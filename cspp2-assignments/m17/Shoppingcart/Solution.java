@@ -126,12 +126,12 @@ class ShoppingCart {
       }
     }
     System.out.println("Total:" + totalAmount);
-    if (isCouponValid == false) {
-      System.out.println("Disc%:" + "0.0");
+    // if (isCouponValid == false) {
+    //   System.out.println("Disc%:" + "0.0");
 
-    } else {
+    // } else {
       System.out.println("Disc%:" + amount);
-    }
+    // }
     System.out.println("Tax:" + amount * 0.15);
     System.out.println("Payable amount: " + getPayableAmount());
   }
