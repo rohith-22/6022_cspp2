@@ -108,16 +108,19 @@ class QuizOperations {
 		// write your code here to read the questions from the console
 		// tokenize the question line and create the question object
 		// add the question objects to the quiz class
-		listObject = new List<Quiz>();
-		String[] array = new String[questionCount];
-		for (int i = 0; i < questionCount; i++ ) {
-			String input = s.nextLine();
-			array = input.split(":");
-			listObject.add(new Quiz(array[0], array[1], Integer.parseInt(array[2]), Integer.parseInt(array[3]), Integer.parseInt(array[4])));
+		if(questionCount == 0) {
+			System.out.println("“Quiz does not have questions”");
+		} else {
+			listObject = new List<Quiz>();
+			String[] array = new String[questionCount];
+			for (int i = 0; i < questionCount; i++ ) {
+				String input = s.nextLine();
+				array = input.split(":");
+				listObject.add(new Quiz(array[0], array[1], Integer.parseInt(array[2]), Integer.parseInt(array[3]), Integer.parseInt(array[4])));
+			}
+			System.out.println(questionCount + " are added to the quiz");
 		}
-		System.out.println(questionCount + " are added to the quiz");
 	}
-
 	/**
 	 * Starts a quiz.
 	 *
@@ -136,9 +139,13 @@ class QuizOperations {
 			choices[i] = arrayTemp[1];
 		}
 		Quiz answers = new Quiz (choices);
+		int k = 1;
 		for (int i = 0; i < answerCount; i++) {
-			System.out.println("question text " + (i + 1) + "(" + listObject.get(i).getAnswers(i) + ")");
-			System.out.println("choice 1" + "	choice 2" + "	choice 3" + "	choice 4"+"\n");
+			if(k == 4) {
+				k = 1;
+			System.out.println("question text " + (i + 1) + "(" +k+ ")");
+			System.out.println("choice 1" + "	choice 2" + "	choice 3" + "	choice 4" + "\n");
+		}
 		}
 
 	}
