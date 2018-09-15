@@ -1,14 +1,46 @@
 import java.util.Scanner;
 import java.util.Arrays;
+/**
+ * Class for quiz.
+ */
 class Quiz {
+	/**
+	 * variable questions.
+	 */
 	private String questions;
+	/**
+	 * variable answerrs.
+	 */
 	private String[] answers;
+	/**
+	 * variable correct Choice.
+	 */
 	private int correctChoice;
+	/**
+	 * { var_description }.
+	 */
 	private int scoreAwarded;
+	/**
+	 * { var_description }.
+	 */
 	private int penalityFined;
+	/**
+	 * Constructs the object.
+	 */
 	Quiz() {
-
+		/**
+		 * { item_description }.
+		 */
 	}
+	/**
+	 * Constructs the object.
+	 *
+	 * @param      qsn       The qsn
+	 * @param      ans       The ans
+	 * @param      choice    The choice
+	 * @param      score     The score
+	 * @param      penality  The penality
+	 */
 	Quiz(String qsn, String ans, int choice, int score, int penality) {
 		this.questions = qsn;
 		this.answers = ans.split(",");
@@ -16,22 +48,54 @@ class Quiz {
 		this.scoreAwarded = score;
 		this.penalityFined = penality;
 	}
+	/**
+	 * Constructs the object.
+	 *
+	 * @param      ans   The ans
+	 */
 	Quiz(String[] ans) {
 		this.answers = ans;
 	}
+	/**
+	 * Gets the qusetion.
+	 *
+	 * @return     The qusetion.
+	 */
 	String getQusetion() {
 		return this.questions;
 	}
+	/**
+	 * Gets the answers.
+	 *
+	 * @param      i     int.
+	 *
+	 * @return     The answers.
+	 */
 	String getAnswers(int i) {
 		String[] tokens = this.answers[i].split(" ");
 		return tokens[1];
 	}
+	/**
+	 * Gets the correct choice.
+	 *
+	 * @return     The correct choice.
+	 */
 	int getCorrectChoice() {
 		return this.correctChoice;
 	}
+	/**
+	 * Gets the score of question.
+	 *
+	 * @return     The score of question.
+	 */
 	int getScoreOfQuestion() {
 		return this.scoreAwarded;
 	}
+	/**
+	 * Gets the penality.
+	 *
+	 * @return     The penality.
+	 */
 	int getPenality() {
 		return this.penalityFined;
 	}
@@ -91,19 +155,32 @@ public final class Solution {
 	}
 }
 /**
+ * Class for quiz operations.
+ */
+class QuizOperations {
+	/**
+	 * { var_description }
+	 */
+	List<Quiz> listObject;
+	/**
+	 * { var_description }
+	 */
+	String[] choices;
+	/**
+	 * Constructs the object.
+	 */
+	QuizOperations() {
+/**
+ * { item_description }
+ */
+	}
+/**
  * Loads questions.
  *
  * @param      s              The scanner object for user input
  * @param      quiz           The quiz object
  * @param      questionCount  The question count
  */
-class QuizOperations {
-	List<Quiz> listObject;
-	String[] choices;
-	QuizOperations() {
-
-	}
-
 	public void loadQuestions(final Scanner s, final Quiz quiz, final int questionCount) {
 		// write your code here to read the questions from the console
 		// tokenize the question line and create the question object
@@ -111,17 +188,14 @@ class QuizOperations {
 		if (questionCount == 0) {
 			System.out.println("“Quiz does not have questions”");
 		} else {
-				listObject = new List<Quiz>();
-				String[] array = new String[questionCount];
-				for (int i = 0; i < questionCount; i++ ) {
-					String input = s.nextLine();
-					array = input.split(":");
-					if (array.length == 5) {
-					listObject.add(new Quiz(array[0], array[1], Integer.parseInt(array[2]), Integer.parseInt(array[3]), Integer.parseInt(array[4])));
-				}
-				if (listObject.size() > 0) {
-				System.out.println(questionCount + " are added to the quiz");
-			}}
+			listObject = new List<Quiz>();
+			String[] array = new String[questionCount];
+			for (int i = 0; i < questionCount; i++ ) {
+				String input = s.nextLine();
+				array = input.split(":");
+				listObject.add(new Quiz(array[0], array[1], Integer.parseInt(array[2]), Integer.parseInt(array[3]), Integer.parseInt(array[4])));
+			}
+			System.out.println(questionCount + " are added to the quiz");
 		}
 	}
 	/**
