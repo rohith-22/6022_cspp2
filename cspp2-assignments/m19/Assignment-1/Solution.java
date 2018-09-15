@@ -111,19 +111,17 @@ class QuizOperations {
 		if (questionCount == 0) {
 			System.out.println("“Quiz does not have questions”");
 		} else {
-			if (questionCount == 5) {
 				listObject = new List<Quiz>();
 				String[] array = new String[questionCount];
 				for (int i = 0; i < questionCount; i++ ) {
 					String input = s.nextLine();
 					array = input.split(":");
+					if (array.length == 5) {
 					listObject.add(new Quiz(array[0], array[1], Integer.parseInt(array[2]), Integer.parseInt(array[3]), Integer.parseInt(array[4])));
 				}
+				if (listObject.size() > 0) {
 				System.out.println(questionCount + " are added to the quiz");
-			}
-			else{
-				System.out.println("Error! Malformed question");
-			}
+			}}
 		}
 	}
 	/**
