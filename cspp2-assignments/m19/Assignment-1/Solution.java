@@ -1,5 +1,5 @@
 import java.util.Scanner;
-import java.util.Arrays;
+// import java.util.Arrays;
 /**
  * Class for quiz.
  */
@@ -164,7 +164,7 @@ class QuizOperations {
    */
   private List<Quiz> listObject;
   /**
-   * { var_description }
+   * { var_description }.
    */
   private String[] choices;
   /**
@@ -192,11 +192,12 @@ class QuizOperations {
     } else {
       listObject = new List<Quiz>();
       String[] array = new String[questionCount];
-      for (int i = 0; i < questionCount; i++ ) {
+      for (int i = 0; i < questionCount; i++) {
         String input = s.nextLine();
         array = input.split(":");
         listObject.add(new Quiz(array[0], array[1],
-                                Integer.parseInt(array[2]), Integer.parseInt(array[3]),
+                                Integer.parseInt(array[2]),
+                                Integer.parseInt(array[3]),
                                 Integer.parseInt(array[4])));
       }
       System.out.println(questionCount + " are added to the quiz");
@@ -247,7 +248,8 @@ class QuizOperations {
     if (listObject.size() > 0) {
       int temp = 0;
       for (int i = 0; i < listObject.size(); i++) {
-        if (listObject.get(i).getCorrectChoice() == Integer.parseInt(choices[i])) {
+        if (listObject.get(i).getCorrectChoice()
+          == Integer.parseInt(choices[i])) {
           System.out.println("question text " + (i + 1));
           System.out.println(" Correct Answer! - Marks Awarded: "
                              + listObject.get(i).getScoreOfQuestion());
