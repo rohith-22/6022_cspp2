@@ -244,7 +244,7 @@ class QuizOperations {
         if (k == five) {
           k = 1;
         }
-        System.out.println(listObject.get(i).getQusetion() + (i + 1) + "(" + k + ")");
+        System.out.println(listObject.get(i).getQusetion() + "(" + k + ")");
         System.out.println("choice 1"
                            + "\tchoice 2" + "\tchoice 3" + "\tchoice 4" + "\n");
         k++;
