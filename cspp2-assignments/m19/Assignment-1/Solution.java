@@ -108,7 +108,7 @@ class QuizOperations {
 		// write your code here to read the questions from the console
 		// tokenize the question line and create the question object
 		// add the question objects to the quiz class
-		if(questionCount == 0) {
+		if (questionCount == 0) {
 			System.out.println("“Quiz does not have questions”");
 		} else {
 			listObject = new List<Quiz>();
@@ -141,11 +141,12 @@ class QuizOperations {
 		Quiz answers = new Quiz (choices);
 		int k = 1;
 		for (int i = 0; i < answerCount; i++) {
-			if(k == 4) {
+			if (k == 4) {
 				k = 1;
-			System.out.println("question text " + (i + 1) + "(" +k+ ")");
-			System.out.println("choice 1" + "	choice 2" + "	choice 3" + "	choice 4" + "\n");
-		}
+				System.out.println("question text " + (i + 1) + "(" + k + ")");
+				System.out.println("choice 1" + "	choice 2" + "	choice 3" + "	choice 4" + "\n");
+				k++;
+			}
 		}
 
 	}
