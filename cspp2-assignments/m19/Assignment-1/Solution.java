@@ -41,7 +41,8 @@ class Quiz {
    * @param      score     The score
    * @param      penality  The penality
    */
-  Quiz(String qsn, String ans, int choice, int score, int penality) {
+  Quiz(final String qsn, final String ans,
+       final int choice, final int score, final int penality) {
     this.questions = qsn;
     this.answers = ans.split(",");
     this.correctChoice = choice;
@@ -53,7 +54,7 @@ class Quiz {
    *
    * @param      ans   The ans
    */
-  Quiz(String[] ans) {
+  Quiz(final String[] ans) {
     this.answers = ans;
   }
   /**
@@ -71,7 +72,7 @@ class Quiz {
    *
    * @return     The answers.
    */
-  String getAnswers(int i) {
+  String getAnswers(final int i) {
     String[] tokens = this.answers[i].split(" ");
     return tokens[1];
   }
@@ -159,19 +160,19 @@ public final class Solution {
  */
 class QuizOperations {
   /**
-   * { var_description }
+   * { var_description }.
    */
-  List<Quiz> listObject;
+  private List<Quiz> listObject;
   /**
    * { var_description }
    */
-  String[] choices;
+  private String[] choices;
   /**
    * Constructs the object.
    */
   QuizOperations() {
     /**
-     * { item_description }
+     * { item_description }.
      */
   }
   /**
@@ -237,7 +238,7 @@ class QuizOperations {
   }
 
   /**
-   * Displays the score report
+   * Displays the score report.
    *
    * @param      quiz     The quiz object
    */
