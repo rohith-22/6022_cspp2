@@ -138,7 +138,7 @@ class QuizOperations {
 		Quiz answers = new Quiz (choices);
 		for (int i = 0; i < answerCount; i++) {
 			System.out.println("question text " + (i + 1) + "(" + listObject.get(i).getAnswers(i) + ")");
-			System.out.println("choice 1" + "    choice 2" + "	choice 3" + "	choice 4");
+			System.out.println("choice 1" + "	choice 2" + "	choice 3" + "	choice 4"+"\n");
 		}
 
 	}
