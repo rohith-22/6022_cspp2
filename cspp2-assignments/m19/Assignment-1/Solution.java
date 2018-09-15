@@ -254,7 +254,8 @@ class QuizOperations {
 	 */
 	public void displayScore(final Quiz quiz) {
 		// write your code here to display the score report
-		if (listObject.size() > 0) {
+		if (listObject.size()  < 1) {
+			return; }
 			int temp = 0;
 			for (int i = 0; i < listObject.size(); i++) {
 				if (listObject.get(i).getCorrectChoice()
@@ -272,5 +273,4 @@ class QuizOperations {
 			}
 			System.out.println("Total Score: " + temp);
 		}
-	}
 }
