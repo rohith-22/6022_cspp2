@@ -73,13 +73,13 @@ public final class Solution {
 				quizOprtns.loadQuestions(s, q, Integer.parseInt(tokens[1]));
 				break;
 			case "START_QUIZ":
-				System.out.println("\n" + "|------------|");
+				System.out.println("|------------|");
 				System.out.println("| Start Quiz |");
 				System.out.println("|------------|");
 				quizOprtns.startQuiz(s, q, Integer.parseInt(tokens[1]));
 				break;
 			case "SCORE_REPORT":
-				System.out.println("\n" + "|--------------|");
+				System.out.println("|--------------|");
 				System.out.println("| Score Report |");
 				System.out.println("|--------------|");
 				quizOprtns.displayScore(q);
