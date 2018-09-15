@@ -189,6 +189,7 @@ class QuizOperations {
 		// add the question objects to the quiz class
 		if (questionCount == 0) {
 			System.out.println("“Quiz does not have questions”");
+			return;
 		} else {
 			listObject = new List<Quiz>();
 			String[] array = new String[questionCount];
