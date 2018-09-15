@@ -111,14 +111,19 @@ class QuizOperations {
 		if (questionCount == 0) {
 			System.out.println("“Quiz does not have questions”");
 		} else {
-			listObject = new List<Quiz>();
-			String[] array = new String[questionCount];
-			for (int i = 0; i < questionCount; i++ ) {
-				String input = s.nextLine();
-				array = input.split(":");
-				listObject.add(new Quiz(array[0], array[1], Integer.parseInt(array[2]), Integer.parseInt(array[3]), Integer.parseInt(array[4])));
+			if (questionCount == 5) {
+				listObject = new List<Quiz>();
+				String[] array = new String[questionCount];
+				for (int i = 0; i < questionCount; i++ ) {
+					String input = s.nextLine();
+					array = input.split(":");
+					listObject.add(new Quiz(array[0], array[1], Integer.parseInt(array[2]), Integer.parseInt(array[3]), Integer.parseInt(array[4])));
+				}
+				System.out.println(questionCount + " are added to the quiz");
 			}
-			System.out.println(questionCount + " are added to the quiz");
+			else{
+				System.out.println("Error! Malformed question");
+			}
 		}
 	}
 	/**
@@ -132,7 +137,7 @@ class QuizOperations {
 		// write your code here to display the quiz questions
 		// read the user responses from the console
 		// store the user respones in the quiz object
-		if (answerCount != 0) {
+		if (listObject.size() > 0) {
 
 			choices = new String[answerCount];
 			for (int i = 0; i < answerCount; i++) {
@@ -161,7 +166,7 @@ class QuizOperations {
 	 */
 	public void displayScore(final Quiz quiz) {
 		// write your code here to display the score report
-		if(listObject.size() > 0) {
+		if (listObject.size() > 0) {
 			int temp = 0;
 			for (int i = 0; i < listObject.size(); i++) {
 				if (listObject.get(i).getCorrectChoice() == Integer.parseInt(choices[i])) {
