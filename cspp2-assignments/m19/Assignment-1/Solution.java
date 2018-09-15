@@ -199,7 +199,7 @@ class QuizOperations {
 				final int three = 3;
 				final int four = 4;
 				final int five = 5;
-				if(array.length < five) {
+				if(array.length < five && array[0].equals("")) {
 					System.out.println("Error! Malformed question");
 					return;
 				}
