@@ -143,10 +143,10 @@ class QuizOperations {
 		for (int i = 0; i < answerCount; i++) {
 			if (k == 4) {
 				k = 1;
+			}
 				System.out.println("question text " + (i + 1) + "(" + k + ")");
 				System.out.println("choice 1" + "	choice 2" + "	choice 3" + "	choice 4" + "\n");
 				k++;
-			}
 		}
 
 	}
