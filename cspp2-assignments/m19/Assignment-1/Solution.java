@@ -263,6 +263,8 @@ class QuizOperations {
     }
     int temp = 0;
     for (int i = 0; i < listObject.size(); i++) {
+      System.out.println(listObject.get(i).getCorrectChoice());
+      System.out.println(choices[i]);
       if (listObject.get(i).getCorrectChoice()
            .equals(choices[i])) {
         System.out.println(listObject.get(i).getQusetion());
