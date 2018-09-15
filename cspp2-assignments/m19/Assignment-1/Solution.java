@@ -195,10 +195,12 @@ class QuizOperations {
       for (int i = 0; i < questionCount; i++) {
         String input = s.nextLine();
         array = input.split(":");
+        final int three = 3;
+        final int four = 4;
         listObject.add(new Quiz(array[0], array[1],
                                 Integer.parseInt(array[2]),
-                                Integer.parseInt(array[3]),
-                                Integer.parseInt(array[4])));
+                                Integer.parseInt(array[three]),
+                                Integer.parseInt(array[four])));
       }
       System.out.println(questionCount + " are added to the quiz");
     }
@@ -223,15 +225,16 @@ class QuizOperations {
         String[] arrayTemp = input.split(" ");
         choices[i] = arrayTemp[1];
       }
-      Quiz answers = new Quiz (choices);
+      Quiz answers = new Quiz(choices);
       int k = 1;
       for (int i = 0; i < answerCount; i++) {
-        if (k == 5) {
+        final int five = 5;
+        if (k == five) {
           k = 1;
         }
         System.out.println("question text " + (i + 1) + "(" + k + ")");
         System.out.println("choice 1"
-                           + "	choice 2" + "	choice 3" + "	choice 4" + "\n");
+                           + "  choice 2" + " choice 3" + " choice 4" + "\n");
         k++;
       }
 
