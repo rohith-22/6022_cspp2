@@ -203,6 +203,10 @@ class QuizOperations {
 					System.out.println("Error! Malformed question");
 					return;
 				}
+				if(Integer.parseInt(array[2]) > 4) {
+					System.out.println("Error! Correct answer choice number is out of range for question text 1");
+					return;
+				}
 				listObject.add(new Quiz(array[0], array[1],
 																Integer.parseInt(array[2]),
 																Integer.parseInt(array[three]),
