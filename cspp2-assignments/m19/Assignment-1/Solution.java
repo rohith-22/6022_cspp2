@@ -141,12 +141,12 @@ class QuizOperations {
 		Quiz answers = new Quiz (choices);
 		int k = 1;
 		for (int i = 0; i < answerCount; i++) {
-			if (k == 4) {
+			if (k == 5) {
 				k = 1;
 			}
-				System.out.println("question text " + (i + 1) + "(" + k + ")");
-				System.out.println("choice 1" + "	choice 2" + "	choice 3" + "	choice 4" + "\n");
-				k++;
+			System.out.println("question text " + (i + 1) + "(" + k + ")");
+			System.out.println("choice 1" + "	choice 2" + "	choice 3" + "	choice 4" + "\n");
+			k++;
 		}
 
 	}
