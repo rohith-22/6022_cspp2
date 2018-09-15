@@ -15,7 +15,7 @@ class Quiz {
   /**
    * variable correct Choice.
    */
-  private int correctChoice;
+  private String correctChoice;
   /**
    * { var_description }.
    */
@@ -42,7 +42,7 @@ class Quiz {
    * @param      penality  The penality
    */
   Quiz(final String qsn, final String ans,
-       final int choice, final int score, final int penality) {
+       final String choice, final int score, final int penality) {
     this.questions = qsn;
     this.answers = ans.split(",");
     this.correctChoice = choice;
@@ -81,7 +81,7 @@ class Quiz {
    *
    * @return     The correct choice.
    */
-  int getCorrectChoice() {
+  String getCorrectChoice() {
     return this.correctChoice;
   }
   /**
@@ -203,14 +203,12 @@ class QuizOperations {
           System.out.println("Error! Malformed question");
           return;
         }
-        if (Integer.parseInt(array[2]) > 4) {
-          System.out.println
-          ("Error! Correct answer choice number "
+        if (Integer.parseInt(array[2]) > four) {
+          System.out.println("Error! Correct answer choice number "
            + "is out of range for question text 1");
           return;
         }
-        listObject.add(new Quiz(array[0], array[1],
-                                Integer.parseInt(array[2]),
+        listObject.add(new Quiz(array[0], array[1], array[2],
                                 Integer.parseInt(array[three]),
                                 Integer.parseInt(array[four])));
       }
@@ -266,7 +264,7 @@ class QuizOperations {
     int temp = 0;
     for (int i = 0; i < listObject.size(); i++) {
       if (listObject.get(i).getCorrectChoice()
-          == Integer.parseInt(choices[i])) {
+           .equals(choices[i])) {
         System.out.println(listObject.get(i).getQusetion());
         System.out.println(" Correct Answer! - Marks Awarded: "
                            + listObject.get(i).getScoreOfQuestion());
