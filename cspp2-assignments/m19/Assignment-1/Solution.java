@@ -67,7 +67,7 @@ public final class Solution {
 			switch (tokens[0]) {
 			case "LOAD_QUESTIONS":
 
-				System.out.println("\n" + "|----------------|");
+				System.out.println("|----------------|");
 				System.out.println("| Load Questions |");
 				System.out.println("|----------------|");
 				quizOprtns.loadQuestions(s, q, Integer.parseInt(tokens[1]));
@@ -159,6 +159,7 @@ class QuizOperations {
 			} else {
 				System.out.println("question text " + (i + 1));
 				System.out.println("Wrong Answer! - Penalty: " + listObject.get(i).getPenality());
+				temp += listObject.get(i).getPenality();
 			}
 		}
 		System.out.println("Total Score: " + temp);
