@@ -234,7 +234,7 @@ class QuizOperations {
         }
         System.out.println("question text " + (i + 1) + "(" + k + ")");
         System.out.println("choice 1"
-                           + "    choice 2" + "    choice 3" + "    choice 4" + "\n");
+                           + "  choice 2" + " choice 3" + " choice 4" + "\n");
         k++;
       }
 
