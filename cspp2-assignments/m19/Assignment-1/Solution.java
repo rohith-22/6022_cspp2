@@ -154,11 +154,11 @@ class QuizOperations {
 		for (int i = 0; i < listObject.size(); i++) {
 			if (listObject.get(i).getCorrectChoice() == Integer.parseInt(choices[i])) {
 				System.out.println("question text " + (i + 1));
-				System.out.println("Correct Answer! - Marks Awarded: " + listObject.get(i).getScoreOfQuestion());
+				System.out.println(" Correct Answer! - Marks Awarded: " + listObject.get(i).getScoreOfQuestion());
 				temp += listObject.get(i).getScoreOfQuestion();
 			} else {
 				System.out.println("question text " + (i + 1));
-				System.out.println("Wrong Answer! - Penalty: " + listObject.get(i).getPenality());
+				System.out.println(" Wrong Answer! - Penalty: " + listObject.get(i).getPenality());
 				temp += listObject.get(i).getPenality();
 			}
 		}
