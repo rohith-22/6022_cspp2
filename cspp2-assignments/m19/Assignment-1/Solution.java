@@ -76,6 +76,13 @@ class Quiz {
     String[] tokens = this.answers[i].split(" ");
     return tokens[1];
   }
+  /**
+   * Gets the choices.
+   *
+   * @param      i     int
+   *
+   * @return     The choices.
+   */
   String getChoices(final int i) {
     return answers[i];
   }
@@ -191,7 +198,7 @@ class QuizOperations {
     // tokenize the question line and create the question object
     // add the question objects to the quiz class
     if (questionCount == 0) {
-      System.out.println("“Quiz does not have questions”");
+      System.out.println("Quiz does not have questions");
       return;
     } else {
       listObject = new List<Quiz>();
@@ -257,11 +264,12 @@ class QuizOperations {
         if (k == five) {
           k = 1;
         }
+        final int three = 3;
         System.out.println(listObject.get(i).getQusetion() + "(" + k + ")");
         System.out.println(listObject.get(i).getChoices(0)
                            + "\t" + listObject.get(i).getChoices(1) + "\t"
                            + listObject.get(i).getChoices(2) + "\t"
-                           + listObject.get(i).getChoices(3) + "\n");
+                           + listObject.get(i).getChoices(three) + "\n");
         k++;
       }
 
