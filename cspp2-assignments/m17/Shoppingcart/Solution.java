@@ -46,7 +46,8 @@ public class Solution {
         System.out.println("totalAmount: " + shoppingObject.getTotalAmount());
         break;
       case "payableAmount":
-        System.out.println("Payable amount: " + shoppingObject.getPayableAmount());
+        System.out.println("Payable amount: "
+          + shoppingObject.getPayableAmount());
         break;
       case "print":
         System.out.println("Name" + "   " + "quantity" + "   " + "Price");
