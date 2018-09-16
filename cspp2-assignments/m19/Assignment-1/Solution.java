@@ -275,26 +275,25 @@ class QuizOperations {
    */
   public void displayScore(final Quiz quiz) {
     // write your code here to display the score report
-    if (listObject.size()  < 1) {
-      return;
-    }
-    int temp = 0;
-    for (int i = 0; i < listObject.size(); i++) {
-      // System.out.println(listObject.get(i).getCorrectChoice());
-      // System.out.println(choices[i]);
-      if (listObject.get(i).getCorrectChoice()
-          .equals(choices[i])) {
-        System.out.println(listObject.get(i).getQusetion());
-        System.out.println(" Correct Answer! - Marks Awarded: "
-                           + listObject.get(i).getScoreOfQuestion());
-        temp += listObject.get(i).getScoreOfQuestion();
-      } else {
-        System.out.println(listObject.get(i).getQusetion());
-        System.out.println(" Wrong Answer! - Penalty: "
-                           + listObject.get(i).getPenality());
-        temp += listObject.get(i).getPenality();
+    if (listObject.size()  > 1) {
+      int temp = 0;
+      for (int i = 0; i < listObject.size(); i++) {
+        // System.out.println(listObject.get(i).getCorrectChoice());
+        // System.out.println(choices[i]);
+        if (listObject.get(i).getCorrectChoice()
+            .equals(choices[i])) {
+          System.out.println(listObject.get(i).getQusetion());
+          System.out.println(" Correct Answer! - Marks Awarded: "
+                             + listObject.get(i).getScoreOfQuestion());
+          temp += listObject.get(i).getScoreOfQuestion();
+        } else {
+          System.out.println(listObject.get(i).getQusetion());
+          System.out.println(" Wrong Answer! - Penalty: "
+                             + listObject.get(i).getPenality());
+          temp += listObject.get(i).getPenality();
+        }
       }
+      System.out.println("Total Score: " + temp);
     }
-    System.out.println("Total Score: " + temp);
   }
 }
