@@ -76,6 +76,9 @@ class Quiz {
     String[] tokens = this.answers[i].split(" ");
     return tokens[1];
   }
+  String getChoices(final int i) {
+    return answers[i];
+  }
   /**
    * Gets the correct choice.
    *
@@ -205,7 +208,7 @@ class QuizOperations {
         }
         if (Integer.parseInt(array[2]) > four) {
           System.out.println("Error! Correct answer choice number "
-           + "is out of range for question text 1");
+                             + "is out of range for question text 1");
           return;
         }
         listObject.add(new Quiz(array[0], array[1], array[2],
@@ -234,6 +237,18 @@ class QuizOperations {
         String input = s.nextLine();
         String[] arrayTemp = input.split(" ");
         choices[i] = arrayTemp[1];
+        if (choices[i].equals("a")) {
+          choices[i] = "1";
+        }
+        if (choices[i].equals("b")) {
+          choices[i] = "2";
+        }
+        if (choices[i].equals("c")) {
+          choices[i] = "3";
+        }
+        if (choices[i].equals("d")) {
+          choices[i] = "4";
+        }
       }
       Quiz answers = new Quiz(choices);
       int k = 1;
@@ -243,8 +258,10 @@ class QuizOperations {
           k = 1;
         }
         System.out.println(listObject.get(i).getQusetion() + "(" + k + ")");
-        System.out.println("choice 1"
-                           + "\tchoice 2" + "\tchoice 3" + "\tchoice 4" + "\n");
+        System.out.println(listObject.get(i).getChoices(0)
+                           + "\t" + listObject.get(i).getChoices(1) + "\t"
+                           + listObject.get(i).getChoices(2) + "\t"
+                           + listObject.get(i).getChoices(3) + "\n");
         k++;
       }
 
@@ -266,7 +283,7 @@ class QuizOperations {
       // System.out.println(listObject.get(i).getCorrectChoice());
       // System.out.println(choices[i]);
       if (listObject.get(i).getCorrectChoice()
-           .equals(choices[i])) {
+          .equals(choices[i])) {
         System.out.println(listObject.get(i).getQusetion());
         System.out.println(" Correct Answer! - Marks Awarded: "
                            + listObject.get(i).getScoreOfQuestion());
