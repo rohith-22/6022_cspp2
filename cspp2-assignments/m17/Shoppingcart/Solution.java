@@ -37,12 +37,13 @@ class ShoppingCart {
   private List<Item> cartItems;
   private double totalAmount;
   private double amount;
+  private double payableAmount;
   private List<String> validCoupons;
   private boolean isCouponValid;
   ShoppingCart() {
     listObject = new List<Item>();
     cartItems = new List<Item>();
-    // payableAmount = 0;
+    payableAmount = 0;
   }
   void addToCatalog(final Item details) {
     listObject.add(details);
@@ -103,7 +104,8 @@ class ShoppingCart {
     if (amount == 0) {
       amount = totalAmount;
     }
-    return amount + amount * 0.15;
+    payableAmount = amount + amount * 0.15;
+    return payableAmount;
 
   }
   void applyCoupon(String coupon) {
@@ -146,7 +148,7 @@ class ShoppingCart {
       System.out.println("Disc%:" + "0.0");
 
     } else {
-      System.out.println("Disc%:" + amount);
+      System.out.println("Disc%:" + (totalAmount - payableAmount));
     }
     System.out.println("Tax:" + amount * 0.15);
     System.out.println("Payable amount: " + getPayableAmount());
