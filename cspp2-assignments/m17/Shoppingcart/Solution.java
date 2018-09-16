@@ -25,9 +25,9 @@ class Item {
   public void reduceQuantity(int value) {
     quantityOfItem -= value;
   }
-  // public void increaseQuantity(int value) {
-  //   quantityOfItem += value;
-  // }
+  public void increaseQuantity(int value) {
+    quantityOfItem += value;
+  }
   public String toString() {
     return itemName + " " + quantityOfItem + " " + priceOfItem;
   }
@@ -48,6 +48,14 @@ class ShoppingCart {
     listObject.add(details);
   }
   void addToCart(Item item) {
+    for (int i = 0; i < cartItems.size(); i++) {
+      if (item.getQuantity() != 0) {
+        cartItems.get(i).increaseQuantity(item.getQuantity());
+        listObject.get(i).reduceQuantity(item.getQuantity());
+
+        return;
+      }
+    }
     for (int i = 0; i < listObject.size(); i++) {
       if (listObject.get(i).getItemName().equals(item.getItemName()) && listObject.get(i).getQuantity() >= item.getQuantity()) {
         cartItems.add(item);
@@ -137,60 +145,60 @@ class ShoppingCart {
     if (isCouponValid == false) {
       System.out.println("Disc%:" + "0.0");
 
-      } else {
+    } else {
       System.out.println("Disc%:" + amount);
-      }
-      System.out.println("Tax:" + amount * 0.15);
-      System.out.println("Payable amount: " + getPayableAmount());
     }
+    System.out.println("Tax:" + amount * 0.15);
+    System.out.println("Payable amount: " + getPayableAmount());
   }
-  public class Solution {
-    private Solution() {
-
-    }
-    public static void main(String[] args) {
-      ShoppingCart obj = new ShoppingCart();
-      Scanner sc = new Scanner(System.in);
-      int input = sc.nextInt();
-      for (int i = 0; i <= input; i++) {
-        String[] tokens = sc.nextLine().split(" ");
-        switch (tokens[0]) {
-        case "add":
-          String[] addArray = tokens[1].split(",");
-          obj.addToCart(new Item(addArray[0], Integer.parseInt(addArray[1])));
-          break;
-        case "Item":
-          // System.out.println("items added");
-          String[] itemArray = tokens[1].split(",");
-          obj.addToCatalog(new Item(itemArray[0], Integer.parseInt(itemArray[1]), Integer.parseInt(itemArray[2])));
-          break;
-        case "catalog":
-          // System.out.println("entered");
-          obj.showCatalog();
-          break;
-        case "show":
-          obj.showCart();
-          break;
-        case "remove":
-          String[] removeArray = tokens[1].split(",");
-          obj.removeFromCart(new Item(removeArray[0], Integer.parseInt(removeArray[1])));
-          break;
-        case "totalAmount":
-          System.out.println("totalAmount: " + obj.getTotalAmount());
-          break;
-        case "payableAmount":
-          System.out.println(("Payable amount: " + obj.getPayableAmount()));
-          break;
-        case "coupon":
-          obj.applyCoupon(tokens[1]);
-          break;
-        case "print":
-          obj.printInvoice();
-          break;
-        default:
-        }
-
-      }
-    }
+}
+public class Solution {
+  private Solution() {
 
   }
+  public static void main(String[] args) {
+    ShoppingCart obj = new ShoppingCart();
+    Scanner sc = new Scanner(System.in);
+    int input = sc.nextInt();
+    for (int i = 0; i <= input; i++) {
+      String[] tokens = sc.nextLine().split(" ");
+      switch (tokens[0]) {
+      case "add":
+        String[] addArray = tokens[1].split(",");
+        obj.addToCart(new Item(addArray[0], Integer.parseInt(addArray[1])));
+        break;
+      case "Item":
+        // System.out.println("items added");
+        String[] itemArray = tokens[1].split(",");
+        obj.addToCatalog(new Item(itemArray[0], Integer.parseInt(itemArray[1]), Integer.parseInt(itemArray[2])));
+        break;
+      case "catalog":
+        // System.out.println("entered");
+        obj.showCatalog();
+        break;
+      case "show":
+        obj.showCart();
+        break;
+      case "remove":
+        String[] removeArray = tokens[1].split(",");
+        obj.removeFromCart(new Item(removeArray[0], Integer.parseInt(removeArray[1])));
+        break;
+      case "totalAmount":
+        System.out.println("totalAmount: " + obj.getTotalAmount());
+        break;
+      case "payableAmount":
+        System.out.println(("Payable amount: " + obj.getPayableAmount()));
+        break;
+      case "coupon":
+        obj.applyCoupon(tokens[1]);
+        break;
+      case "print":
+        obj.printInvoice();
+        break;
+      default:
+      }
+
+    }
+  }
+
+}
