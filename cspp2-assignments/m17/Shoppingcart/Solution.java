@@ -48,14 +48,14 @@ class ShoppingCart {
     listObject.add(details);
   }
   void addToCart(Item item) {
-    for (int i = 0; i < cartItems.size(); i++) {
-      if (item.getQuantity() != 0) {
-        cartItems.get(i).increaseQuantity(item.getQuantity());
-        listObject.get(i).reduceQuantity(item.getQuantity());
+    // for (int i = 0; i < cartItems.size(); i++) {
+    //   if (item.getQuantity() != 0) {
+    //     cartItems.get(i).increaseQuantity(item.getQuantity());
+    //     listObject.get(i).reduceQuantity(item.getQuantity());
 
-        return;
-      }
-    }
+    //     return;
+    //   }
+    // }
     for (int i = 0; i < listObject.size(); i++) {
       if (listObject.get(i).getItemName().equals(item.getItemName()) && listObject.get(i).getQuantity() >= item.getQuantity()) {
         cartItems.add(item);
