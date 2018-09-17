@@ -218,6 +218,14 @@ class QuizOperations {
                              + "is out of range for question text 1");
           return;
         }
+        if (Integer.parseInt(array[three]) < 0) {
+          System.out.println("Invalid max marks for " + array[0]);
+          return;
+        }
+        if (Integer.parseInt(array[four]) < 0 ) {
+          System.out.println("Invalid penalty for " + array[0]);
+          return;
+        }
         listObject.add(new Quiz(array[0], array[1], array[2],
                                 Integer.parseInt(array[three]),
                                 Integer.parseInt(array[four])));
@@ -266,6 +274,7 @@ class QuizOperations {
         }
         final int three = 3;
         System.out.println(listObject.get(i).getQusetion() + "(" + k + ")");
+
         System.out.println(listObject.get(i).getChoices(0)
                            + "\t" + listObject.get(i).getChoices(1) + "\t"
                            + listObject.get(i).getChoices(2) + "\t"
@@ -286,24 +295,24 @@ class QuizOperations {
     if (listObject.size()  == 0) {
       return;
     }
-      int temp = 0;
-      for (int i = 0; i < listObject.size(); i++) {
-        // System.out.println(listObject.get(i).getCorrectChoice());
-        // System.out.println(choices[i]);
-        if (listObject.get(i).getCorrectChoice()
-            .equals(choices[i])) {
-          System.out.println(listObject.get(i).getQusetion());
-          System.out.println(" Correct Answer! - Marks Awarded: "
-                             + listObject.get(i).getScoreOfQuestion());
-          temp += listObject.get(i).getScoreOfQuestion();
-        } else {
-          System.out.println(listObject.get(i).getQusetion());
-          System.out.println(" Wrong Answer! - Penalty: "
-                             + listObject.get(i).getPenality());
-          temp += listObject.get(i).getPenality();
-        }
+    int temp = 0;
+    for (int i = 0; i < listObject.size(); i++) {
+      // System.out.println(listObject.get(i).getCorrectChoice());
+      // System.out.println(choices[i]);
+      if (listObject.get(i).getCorrectChoice()
+          .equals(choices[i])) {
+        System.out.println(listObject.get(i).getQusetion());
+        System.out.println(" Correct Answer! - Marks Awarded: "
+                           + listObject.get(i).getScoreOfQuestion());
+        temp += listObject.get(i).getScoreOfQuestion();
+      } else {
+        System.out.println(listObject.get(i).getQusetion());
+        System.out.println(" Wrong Answer! - Penalty: "
+                           + listObject.get(i).getPenality());
+        temp += listObject.get(i).getPenality();
       }
-      System.out.println("Total Score: " + temp);
     }
+    System.out.println("Total Score: " + temp);
   }
+}
 
