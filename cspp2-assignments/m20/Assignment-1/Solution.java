@@ -111,6 +111,7 @@ class Question {
    * @param      answer  The answer
    */
   public void setResponse(final String answer) {
+    response = answer;
   }
   /**
    * Gets the response.
@@ -127,7 +128,7 @@ class Question {
    */
   public String toString() {
     return questiontext + "(" + maxMarks + ")" + "\n" + Arrays.
-           toString(choices).replace("[", "").replace(", ", "\t") + "\n";
+           toString(choices).replace("[", "").replace(", ", "\t").replace("]", "") + "\n";
   }
 }
 /**
@@ -319,13 +320,14 @@ public final class Solution {
     for (int i = 0; i < quiz.getSize(); i++) {
       System.out.println(quiz.getQuestion(i).getQuestionText());
       if (quiz.getQuestion(i).evaluateResponse(quiz.getQuestion(i).getResponse())) {
+        System.out.println("entered");
         score += quiz.getQuestion(i).getMaxMarks();
         System.out.println(" Correct Answer! - Marks Awarded: " + quiz.getQuestion(i).getMaxMarks());
       } else {
         score += quiz.getQuestion(i).getPenalty();
-        System.out.println("Wrong Answer! - Penality: " + quiz.getQuestion(i).getPenalty());
+        System.out.println(" Wrong Answer! - Penalty: " + quiz.getQuestion(i).getPenalty());
       }
     }
-    System.out.println("Total Score :" + score);
+    System.out.println("Total Score: " + score);
   }
 }
