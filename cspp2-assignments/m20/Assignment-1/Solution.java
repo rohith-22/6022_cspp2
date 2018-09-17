@@ -31,7 +31,6 @@ class Question {
   /**
    * Constructs the object.
    */
-  private int k = 1;
   Question() {
 
   }
@@ -129,7 +128,8 @@ class Question {
    */
   public String toString() {
     return questiontext + "(" + maxMarks + ")" + "\n" + Arrays.
-           toString(choices).replace("[", "").replace(", ", "\t").replace("]", "") + "\n";
+           toString(choices).replace("[", "").
+           replace(", ", "\t").replace("]", "") + "\n";
   }
 }
 /**
@@ -181,8 +181,13 @@ class Quiz {
   public int getSize() {
     return size;
   }
+  /**
+   * Shows the report.
+   *
+   * @return     { description_of_the_return_value }
+   */
   public String showReport() {
-    String s = "" ;
+    String s = "";
     return s;
   }
 
@@ -249,15 +254,14 @@ public final class Solution {
    *
    * @param      scan       The scan
    * @param      quiz       The quiz
-   * @param      q          The question count
+   * @param      q          The quarter
    *
+   * @throws     Exception  { exception_description }
    */
   public static void loadQuestions(final Scanner scan,
                                    final Quiz quiz,
                                    final int q) throws Exception {
-    // write your code here to read the questions from the console
-    // tokenize the question line and create the question object
-    // add the question objects to the quiz class.
+
     final int two = 2;
     final int three = 3;
     final int four = 4;
@@ -268,8 +272,8 @@ public final class Solution {
       for (int i = 0; i < q; i++) {
         String[] inputQuiz = scan.nextLine().split(":");
         if (inputQuiz.length < five || inputQuiz[0].length()
-            <= 0 || inputQuiz[1].length() <= 0 ||
-            inputQuiz[two].length() <= 0
+            <= 0 || inputQuiz[1].length() <= 0
+            || inputQuiz[two].length() <= 0
             || inputQuiz[three].length() <= 0 || inputQuiz[four].length() <= 0) {
           throw new Exception("Error! Malformed question");
         }
@@ -281,9 +285,9 @@ public final class Solution {
             || Integer.parseInt(inputQuiz[two])
             > inputQuiz[1].split(",").length) {
 
-          throw new Exception
-          ("Error! Correct answer choice number is out of range for "
-           + inputQuiz[0]);
+          throw new Exception("Error! Correct answer"
+                              + " choice number is out of range for "
+                              + inputQuiz[0]);
         }
         if (Integer.parseInt(inputQuiz[three]) <= 0) {
           throw new Exception("Invalid max marks for " + inputQuiz[0]);
@@ -329,8 +333,8 @@ public final class Solution {
     int score = 0;
     for (int i = 0; i < quiz.getSize(); i++) {
       System.out.println(quiz.getQuestion(i).getQuestionText());
-      if (quiz.getQuestion(i).evaluateResponse
-          (quiz.getQuestion(i).getResponse())) {
+      if (quiz.getQuestion(i).evaluateResponse(quiz.
+          getQuestion(i).getResponse())) {
         // System.out.println("entered");
         score += quiz.getQuestion(i).getMaxMarks();
         System.out.println(" Correct Answer! - Marks Awarded: "
