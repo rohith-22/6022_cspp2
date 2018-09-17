@@ -265,7 +265,7 @@ public final class Solution {
             inputQuiz[2].length() <= 0 || inputQuiz[3].length() <= 0 || inputQuiz[4].length() <= 0) {
           throw new Exception("Error! Malformed question");
         }
-        if (inputQuiz[1].split(",").length < 0) {
+        if (inputQuiz[1].split(",").length < 2) {
           throw new Exception(inputQuiz[0] + " does not have enough answer choices");
         }
         if (Integer.parseInt(inputQuiz[2]) < 0 || Integer.parseInt(inputQuiz[2]) > inputQuiz[1].split(",").length) {
