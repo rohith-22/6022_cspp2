@@ -5,31 +5,31 @@ import java.util.Arrays;
  */
 class Question {
   /**
-   * { var_description }.
+   * variable for question.
    */
   private String questiontext;
   /**
-   * { var_description }.
+   * variable for choices.
    */
   private String[] choices;
   /**
-   * { var_description }.
+   * variable for correct answer.
    */
   private int correctAnswer;
   /**
-   * { var_description }.
+   * variavle for max marks.
    */
   private int maxMarks;
   /**
-   * { var_description }.
+   * variable for penality marks.
    */
   private int penalty;
   /**
-   * { var_description }.
+   * variable to store responses.
    */
   private String response;
   /**
-   * Constructs the object.
+   * Constructs the object for class question.
    */
   Question() {
 
@@ -53,11 +53,11 @@ class Question {
     penalty = penalty1;
   }
   /**
-   * { function_description }.
+   * function to evaluate the choice of the user.
    *
    * @param      choice  The choice
    *
-   * @return     { description_of_the_return_value }
+   * @return     returns if user gives correct choice.
    */
   public boolean evaluateResponse(final String choice) {
     if (choices[correctAnswer - 1].equals(choice)) {
@@ -137,15 +137,15 @@ class Question {
  */
 class Quiz {
   /**
-   * { var_description }.
+   * fina hundered for magic number error.
    */
   private final int onehundred = 100;
   /**
-   * { var_description }.
+   * array to store questions.
    */
   private Question[] questions;
   /**
-   * { var_description }.
+   * size of the array.
    */
   private int size;
   /**
@@ -174,23 +174,13 @@ class Quiz {
     return questions[index];
   }
   /**
-   * Shows the report.
+   * gives size of array.
    *
-   * @return     { description_of_the_return_value }
+   * @return     returns size of array.
    */
   public int getSize() {
     return size;
   }
-  /**
-   * Shows the report.
-   *
-   * @return     { description_of_the_return_value }
-   */
-  public String showReport() {
-    String s = "";
-    return s;
-  }
-
 }
 /**
  * Solution class for code-eval.
@@ -274,7 +264,8 @@ public final class Solution {
         if (inputQuiz.length < five || inputQuiz[0].length()
             <= 0 || inputQuiz[1].length() <= 0
             || inputQuiz[two].length() <= 0
-            || inputQuiz[three].length() <= 0 || inputQuiz[four].length() <= 0) {
+            || inputQuiz[three].length() <= 0
+            || inputQuiz[four].length() <= 0) {
           throw new Exception("Error! Malformed question");
         }
         if (inputQuiz[1].split(",").length < two) {
