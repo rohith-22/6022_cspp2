@@ -214,7 +214,7 @@ class QuizOperations {
           return;
         }
         if (array[1].split(",").length < 2) {
-          System.out.println(array[0] + "   does not have enough answer choices");
+          System.out.println(array[0] + "  does not have enough answer choices");
           return;
         }
         if (Integer.parseInt(array[2]) > four) {
