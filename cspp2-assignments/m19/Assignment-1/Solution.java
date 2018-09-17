@@ -226,8 +226,12 @@ class QuizOperations {
           System.out.println("Invalid penalty for " + array[0]);
           return;
         }
-        if(array.length == 2) {
+        if (array.length == 2) {
 
+        }
+        if (array[1].split(" ").length < 2) {
+          System.out.println(array[0] + "  does not have enough answer choices");
+          return;
         }
         listObject.add(new Quiz(array[0], array[1], array[2],
                                 Integer.parseInt(array[three]),
