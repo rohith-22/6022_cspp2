@@ -213,9 +213,13 @@ class QuizOperations {
           System.out.println("Error! Malformed question");
           return;
         }
+        if (array[1].split(" ").length < 2) {
+          System.out.println(array[0] + "  does not have enough answer choices");
+          return;
+        }
         if (Integer.parseInt(array[2]) > four) {
           System.out.println("Error! Correct answer choice number "
-                             + "is out of range for question text 1");
+                             + "is out of range for" + array[0]);
           return;
         }
         if (Integer.parseInt(array[three]) < 0) {
@@ -229,10 +233,7 @@ class QuizOperations {
         if (array.length == 2) {
 
         }
-        if (array[1].split(" ").length < 2) {
-          System.out.println(array[0] + "  does not have enough answer choices");
-          return;
-        }
+
         listObject.add(new Quiz(array[0], array[1], array[2],
                                 Integer.parseInt(array[three]),
                                 Integer.parseInt(array[four])));
