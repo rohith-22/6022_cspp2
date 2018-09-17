@@ -320,7 +320,7 @@ public final class Solution {
     for (int i = 0; i < quiz.getSize(); i++) {
       System.out.println(quiz.getQuestion(i).getQuestionText());
       if (quiz.getQuestion(i).evaluateResponse(quiz.getQuestion(i).getResponse())) {
-        System.out.println("entered");
+        // System.out.println("entered");
         score += quiz.getQuestion(i).getMaxMarks();
         System.out.println(" Correct Answer! - Marks Awarded: " + quiz.getQuestion(i).getMaxMarks());
       } else {
