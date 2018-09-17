@@ -326,6 +326,6 @@ public final class Solution {
         System.out.println("Wrong Answer! - Penality: " + quiz.getQuestion(i).getPenalty());
       }
     }
-    System.out.println("Total Score" + score);
+    System.out.println("Total Score :" + score);
   }
 }
