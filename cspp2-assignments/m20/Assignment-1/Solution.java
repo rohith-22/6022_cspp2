@@ -254,7 +254,7 @@ public final class Solution {
                                    final Quiz quiz, final int q) throws Exception {
     // write your code here to read the questions from the console
     // tokenize the question line and create the question object
-    // add the question objects to the quiz class
+    // add the question objects to the quiz class.
     if (q == 0) {
       throw new Exception("Quiz does not have questions");
     } else {
@@ -264,7 +264,11 @@ public final class Solution {
             inputQuiz[2].length() <= 0 || inputQuiz[3].length() <= 0 || inputQuiz[4].length() <= 0) {
           throw new Exception("Error! Malformed question");
         }
-        if (inputQuiz[1].split(",").length < 2) {
+        if (inputQuiz[1].split(",").length < 0) {
+          throw new Exception(inputQuiz[0] + " does not have enough answer choices");
+        }
+        if (Integer.parseInt(inputQuiz[2]) < 0 || Integer.parseInt(inputQuiz[2]) > inputQuiz[1].split(",").length) {
+
           throw new Exception("Error! Correct answer choice number is out of range for " + inputQuiz[0]);
         }
         if (Integer.parseInt(inputQuiz[3]) <= 0) {
@@ -278,7 +282,7 @@ public final class Solution {
                                       Integer.parseInt(inputQuiz[3]),
                                       Integer.parseInt(inputQuiz[4])));
       }
-      System.out.println(q + "  are added to the quiz");
+      System.out.println(q + " are added to the quiz");
     }
   }
   /**
@@ -293,9 +297,12 @@ public final class Solution {
     // write your code here to display the quiz questions on the console.
     // read the user responses from the console using scanner object.
     // store the user respone in the question object
+    if (quiz.getSize() == 0) {
+      return;
+    }
     for (int i = 0; i < q; i++) {
       System.out.println(quiz.getQuestion(i));
-      quiz.getQuestion(i).setResponse(scan.next());
+      quiz.getQuestion(i).setResponse(scan.nextLine());
     }
   }
   /**
@@ -305,6 +312,9 @@ public final class Solution {
    */
   public static void displayScore(final Quiz quiz) {
     // write your code here to display the score report using quiz object.
+    if (quiz.getSize() == 0) {
+      return;
+    }
     int score = 0;
     for (int i = 0; i < quiz.getSize(); i++) {
       System.out.println(quiz.getQuestion(i).getQuestionText());
