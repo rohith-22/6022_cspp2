@@ -222,9 +222,12 @@ class QuizOperations {
           System.out.println("Invalid max marks for " + array[0]);
           return;
         }
-        if (Integer.parseInt(array[four]) < 0 ) {
+        if (Integer.parseInt(array[four]) > 0 ) {
           System.out.println("Invalid penalty for " + array[0]);
           return;
+        }
+        if(array.length == 2) {
+
         }
         listObject.add(new Quiz(array[0], array[1], array[2],
                                 Integer.parseInt(array[three]),
