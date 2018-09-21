@@ -1,20 +1,21 @@
 import java.util.*;
 import java.io.*;
 public class BagOfWords {
-	public static void main(String[] args) {
+	BagOfWords() {
+		
+	}
+	public void words(File[] list){
 		Plagiarism objP = new Plagiarism();
-		Scanner sc = new Scanner(System.in);
 		ArrayList<String> text = new ArrayList<>();
-		File file = new File(sc.next());
-		File[] listOfFiles = file.listFiles();
+		File[] listOfFiles = list;
 		if (listOfFiles.length == 0) {
 			System.out.println("empty directory");
 		} else {
 			Arrays.sort(listOfFiles);
 			try {
-				System.out.print("      \t");
+				System.out.print("      \t\t");
 				for (File eachFile : listOfFiles) {
-					System.out.print(eachFile.getName()+"\t");
+					System.out.print("\t" + eachFile.getName());
 					Scanner sc1 = new Scanner(eachFile);
 					String str = "";
 					while (sc1.hasNext()) {
@@ -33,7 +34,7 @@ public class BagOfWords {
 			for (int i = 0; i < text.size(); i++) {
 				System.out.print(listOfFiles[i].getName());
 				for (int j = 0; j < text.size(); j++) {
-					System.out.print("\t" + objP.cosineSimilarity(text.get(i), text.get(j)));
+					System.out.print("\t\t" + objP.cosineSimilarity(text.get(i), text.get(j)));
 					if (objP.cosineSimilarity(text.get(i), text.get(j)) > temp
 					        && objP.cosineSimilarity(text.get(i), text.get(j)) != 100) {
 						temp = objP.cosineSimilarity(text.get(i), text.get(j));
