@@ -230,7 +230,7 @@ class Task {
 /**
  * Class for todoist main.
  */
-public class TodoistMain {
+public final class TodoistMain {
   /**
    * Constructs the object.
    */
