@@ -6,21 +6,32 @@ import java.util.ArrayList;
   * write your code below this comment
   */
 class Todoist {
+	/**
+	 * variable tasklist.
+	 */
 	ArrayList<Task> taskList;
-	private int count;
 	Todoist() {
+		/**
+		 * empty constructor.
+		 */
 		taskList = new ArrayList<>();
-		count = 0;
 	}
 	/**
 	 * Adds a task.
 	 *
 	 * @param      todoTask  The todo task
 	 */
-	public void addTask(Task todoTask) {
+	public void addTask(final Task todoTask) {
 		taskList.add(todoTask);
 	}
-	public Task getNextTask(String name) {
+	/**
+	 * Gets the next task.
+	 *
+	 * @param      name  The name
+	 *
+	 * @return     The next task.
+	 */
+	public Task getNextTask(final String name) {
 		for (Task each : taskList) {
 			if (name.equals(each.getAssignedTo()) && each.getImportant().equals("Important")
 			    && each.getUrgent().equals("Not Urgent") && each.getStatus().equals("todo")) {
@@ -37,7 +48,7 @@ class Todoist {
 	 *
 	 * @return     The next task.
 	 */
-	public Task[] getNextTask(String name,  int value) {
+	public Task[] getNextTask(final String name, final int value) {
 		Task[] taskArray = new Task[value];
 		int i = 0;
 		for (Task each : taskList) {
@@ -50,9 +61,9 @@ class Todoist {
 		return taskArray;
 	}
 	/**
-	 * { function_description }
+	 * gives total time.
 	 *
-	 * @return     { description_of_the_return_value }
+	 * @return    returns int
 	 */
 	public int totalTime4Completion() {
 		int time = 0;
@@ -102,6 +113,7 @@ class Task {
 	 * @param      important       The important
 	 * @param      urgent          The urgent
 	 * @param      status          The status
+	 * @throws     Exception       the exception
 	 */
 	Task(final String title, final String assignedTo,
 	     final int timeToComplete, final boolean important,
@@ -113,7 +125,6 @@ class Task {
 		this.importantTask = important;
 		this.urgentTask = urgent;
 		this.taskStatus = status;
-		// System.out.println(status);
 		if (timeToCompleteTask <= 0) {
 			throw new Exception("Invalid timeToComplete " + timeToCompleteTask);
 		}
@@ -263,12 +274,13 @@ public class TodoistMain {
 	 * @throws     Exception  if task inputs are invalid
 	 */
 	public static Task createTask(final String[] tokens) throws Exception {
+		final int two =2, three = 3, four = 4, five = 5, six = 6;
 		String title = tokens[1];
-		String assignedTo = tokens[2];
-		int timeToComplete = Integer.parseInt(tokens[3]);
-		boolean important = tokens[4].equals("y");
-		boolean urgent = tokens[5].equals("y");
-		String status = tokens[6];
+		String assignedTo = tokens[two];
+		int timeToComplete = Integer.parseInt(tokens[three]);
+		boolean important = tokens[four].equals("y");
+		boolean urgent = tokens[five].equals("y");
+		String status = tokens[six];
 		return new Task(
 		         title, assignedTo, timeToComplete, important, urgent, status);
 	}
