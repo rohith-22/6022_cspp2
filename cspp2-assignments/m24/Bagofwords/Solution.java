@@ -1,7 +1,21 @@
 import java.util.*;
 import java.io.*;
+/**
+ * Class for solution.
+ */
 public class Solution {
-	public static void main(String[] args) {
+	/**
+	 * Constructs the object.
+	 */
+	private Solution() {
+
+	}
+	/**
+	 * main.
+	 *
+	 * @param      args  The arguments
+	 */
+	public static void main(final String[] args) {
 		BagOfWords objBow = new BagOfWords();
 		Scanner sc = new Scanner(System.in);
 		try {
