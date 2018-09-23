@@ -54,7 +54,7 @@ public class StringMatching {
 		int[][] tempMatrix = new int[lengthOne + 1][lengthTwo + 1];
 		double result = 0;
 		double lcsValue = 0;
-		if(lengthOne == 0 || lengthTwo == 0) {
+		if(lengthOne == 0 && lengthTwo == 0) {
 			return 100D;
 		}
 		for (int i = 0; i <= lengthOne; i++) {
