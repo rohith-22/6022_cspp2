@@ -12,7 +12,7 @@ public class StringMatching {
 		} else {
 			Arrays.sort(listOfFiles);
 			try {
-				System.out.print("      \t");
+				System.out.print(" \t\t");
 				for (File eachFile : listOfFiles) {
 					System.out.print("\t" + eachFile.getName());
 					Scanner sc1 = new Scanner(eachFile);
@@ -33,7 +33,7 @@ public class StringMatching {
 			for (int i = 0; i < text.size(); i++) {
 				System.out.print(listOfFiles[i].getName());
 				for (int j = 0; j < text.size(); j++) {
-					System.out.print("\t" + findLCS(text.get(i), text.get(j)));
+					System.out.print("\t\t" + findLCS(text.get(i), text.get(j)));
 					if (findLCS(text.get(i), text.get(j)) > temp
 					        && findLCS(text.get(i), text.get(j)) != 100) {
 						temp = findLCS(text.get(i), text.get(j));
@@ -48,27 +48,27 @@ public class StringMatching {
 		}
 	}
 	public double findLCS(String firstString, String secondString) {
-		int[][] lcsMatrix = new int[firstString.length() + 1][secondString.length() + 1];
-		double result = 0;
-		for (int i = 0; i <= firstString.length(); i++) {
-			for (int j = 0; j <= secondString.length(); j++) {
-				if (i == 0 || j == 0) {
-					lcsMatrix[i][j] = 0;
-				} else if (firstString.charAt(i - 1) == secondString.charAt(j - 1)) {
-					lcsMatrix[i][j] = lcsMatrix[i - 1][j - 1] + 1;
-				} else {
-					lcsMatrix[i][j] = 0;
-				}
-				if (result < lcsMatrix[i][j]) {
-					result = lcsMatrix[i][j];
+			int[][] lcsMatrix = new int[firstString.length() + 1][secondString.length() + 1];
+			double result = 0;
+			for (int i = 0; i <= firstString.length(); i++) {
+				for (int j = 0; j <= secondString.length(); j++) {
+					if (i == 0 || j == 0) {
+						lcsMatrix[i][j] = 0;
+					} else if (firstString.charAt(i - 1) == secondString.charAt(j - 1)) {
+						lcsMatrix[i][j] = lcsMatrix[i - 1][j - 1] + 1;
+					} else {
+						lcsMatrix[i][j] = 0;
+					}
+					if (result < lcsMatrix[i][j]) {
+						result = lcsMatrix[i][j];
+					}
 				}
 			}
+			double lcs = ((result * 2) / (firstString.length() + secondString.length())) * 100;
+			// System.out.println((int)lcsValue);
+			return Math.round(lcs * 100D) / 100;
 		}
-		double lcs = ((result * 2) / (firstString.length() + secondString.length())) * 100;
-		// System.out.println((int)lcsValue);
-		return Math.round(lcs * 100D) / 100;
 	}
-}
 
 
 
