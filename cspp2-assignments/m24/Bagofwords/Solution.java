@@ -1,9 +1,10 @@
-import java.util.*;
-import java.io.*;
+import java.util.Scanner;
+import java.util.NoSuchElementException;
+import java.io.File;
 /**
  * Class for solution.
  */
-public class Solution {
+public final class Solution {
   /**
    * Constructs the object.
    */
