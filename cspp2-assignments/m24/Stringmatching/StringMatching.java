@@ -48,32 +48,32 @@ public class StringMatching {
 		}
 	}
 	public double findLCS(String firstString, String secondString) {
-		int[][] lcsMatrix = new int[firstString.length() + 1][secondString.length() + 1];
+		int lengthOne = firstString.length();
+		int lengthTwo = secondString.length();
+		double totalLength = lengthOne + lengthTwo;
+		int[][] tempMatrix = new int[lengthOne + 1][lengthTwo + 1];
 		double result = 0;
 		double lcsValue = 0;
-		if(firstString.length() == 0 && secondString.length() == 0) {
-			return 100D;
-		}
-		for (int i = 0; i <= firstString.length(); i++) {
-			for (int j = 0; j <= secondString.length(); j++) {
+		for (int i = 0; i <= lengthOne; i++) {
+			for (int j = 0; j <= lengthTwo; j++) {
 				if (i == 0 || j == 0) {
-					lcsMatrix[i][j] = 0;
+					tempMatrix[i][j] = 0;
 				} else if (firstString.charAt(i - 1) == secondString.charAt(j - 1)) {
-					lcsMatrix[i][j] = lcsMatrix[i - 1][j - 1] + 1;
+					tempMatrix[i][j] = tempMatrix[i - 1][j - 1] + 1;
 				} else {
-					lcsMatrix[i][j] = 0;
+					tempMatrix[i][j] = 0;
 				}
-				if (result < lcsMatrix[i][j]) {
-					result = lcsMatrix[i][j];
+				if (result < tempMatrix[i][j]) {
+					result = tempMatrix[i][j];
 				}
 			}
 		}
-		lcsValue = ((result * 2) / firstString.length() + secondString.length());
+		lcsValue = ((result * 2) / totalLength) * 100;
 		// System.out.println((int)lcsValue);
 		return Math.round(lcsValue * 100D) / 100;
 	}
-
 }
+
 
 
 
