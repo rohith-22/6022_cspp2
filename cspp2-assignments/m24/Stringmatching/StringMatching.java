@@ -68,7 +68,7 @@ public class StringMatching {
 				}
 			}
 		}
-		lcsValue = ((result * 2) / firstString.length() + secondString.length()) * 100;
+		lcsValue = ((result * 2) / firstString.length() + secondString.length());
 		// System.out.println((int)lcsValue);
 		return Math.round(lcsValue * 100D) / 100;
 	}
