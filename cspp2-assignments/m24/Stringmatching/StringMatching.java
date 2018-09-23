@@ -12,7 +12,7 @@ public class StringMatching {
 		} else {
 			Arrays.sort(listOfFiles);
 			try {
-				System.out.print("\t");
+				System.out.print("      \t\t");
 				for (File eachFile : listOfFiles) {
 					System.out.print("\t" + eachFile.getName());
 					Scanner sc1 = new Scanner(eachFile);
@@ -33,7 +33,7 @@ public class StringMatching {
 			for (int i = 0; i < text.size(); i++) {
 				System.out.print(listOfFiles[i].getName());
 				for (int j = 0; j < text.size(); j++) {
-					System.out.print("    \t" + findLCS(text.get(i), text.get(j)));
+					System.out.print("\t\t" + findLCS(text.get(i), text.get(j)));
 					if (findLCS(text.get(i), text.get(j)) > temp
 					        && findLCS(text.get(i), text.get(j)) != 100) {
 						temp = findLCS(text.get(i), text.get(j));
