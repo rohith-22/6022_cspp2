@@ -24,7 +24,7 @@ public final class Solution {
       File[] listOfFiles = file.listFiles();
       objBow.words(listOfFiles);
     } catch (NoSuchElementException e) {
-      System.out.println("empty directory");
+      System.out.println("Empty Directory");
     }
   }
 }
