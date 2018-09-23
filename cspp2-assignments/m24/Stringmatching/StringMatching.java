@@ -12,9 +12,9 @@ public class StringMatching {
 		} else {
 			Arrays.sort(listOfFiles);
 			try {
-				System.out.print("      \t\t");
+				System.out.print("         ");
 				for (File eachFile : listOfFiles) {
-					System.out.print("\t" + eachFile.getName());
+					System.out.print("    " + eachFile.getName());
 					Scanner sc1 = new Scanner(eachFile);
 					String str = "";
 					while (sc1.hasNext()) {
@@ -33,7 +33,7 @@ public class StringMatching {
 			for (int i = 0; i < text.size(); i++) {
 				System.out.print(listOfFiles[i].getName());
 				for (int j = 0; j < text.size(); j++) {
-					System.out.print("\t\t" + findLCS(text.get(i), text.get(j)));
+					System.out.print("        " + findLCS(text.get(i), text.get(j)));
 					if (findLCS(text.get(i), text.get(j)) > temp
 					        && findLCS(text.get(i), text.get(j)) != 100) {
 						temp = findLCS(text.get(i), text.get(j));
@@ -50,6 +50,9 @@ public class StringMatching {
 	public double findLCS(String firstString, String secondString) {
 			int[][] lcsMatrix = new int[firstString.length() + 1][secondString.length() + 1];
 			double result = 0;
+			if (firstString.length() == 0 && secondString.length() == 0) {
+				return 100D;
+			}
 			for (int i = 0; i <= firstString.length(); i++) {
 				for (int j = 0; j <= secondString.length(); j++) {
 					if (i == 0 || j == 0) {
