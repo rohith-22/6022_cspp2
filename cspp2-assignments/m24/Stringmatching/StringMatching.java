@@ -12,7 +12,7 @@ public class StringMatching {
 		} else {
 			Arrays.sort(listOfFiles);
 			try {
-				System.out.print("     \t");
+				System.out.print("   \t");
 				for (File eachFile : listOfFiles) {
 					System.out.print("\t" + eachFile.getName());
 					Scanner sc1 = new Scanner(eachFile);
