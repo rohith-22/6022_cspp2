@@ -24,6 +24,9 @@ public class Plagiarism {
 		// System.out.println(mapOne);
 		Map<String, Integer> mapTwo = cleanUp(docTwo);
 		// System.out.println(mapTwo);
+		if (mapOne.keySet().size() < 1 || mapTwo.keySet().size() < 1) {
+			return 0;
+		}
 		for (String eachElement : mapOne.keySet()) {
 
 			denominatorOne += Math.pow(mapOne.get(eachElement), 2);
